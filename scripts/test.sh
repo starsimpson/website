@@ -22,7 +22,7 @@ echo "Test passed!"
 
 echo "Checking that 404 page renders"
 resp=$(curl -sSL https://oxide.computer/thing)
-if ! echo "$resp" | grep -q "UA-148178470-1"; then
+if ! echo "$resp" | grep -q "fourohfour"; then
 	echo "Expected our 404 page to be returned"
 	exit 1
 fi
