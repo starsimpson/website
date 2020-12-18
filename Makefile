@@ -9,7 +9,7 @@ endif
 DOCKER_FLAGS += --name oxide-website \
 				--disable-content-trust \
 
-DOCKER_IMAGE=oxide/webiste
+DOCKER_IMAGE=oxide/website
 
 .PHONY: shellcheck
 shellcheck: ## Runs the shellcheck tests on the scripts.
