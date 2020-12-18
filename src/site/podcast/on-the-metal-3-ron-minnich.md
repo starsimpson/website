@@ -24,7 +24,7 @@ some Gentoo jokes, flip flop programming toys, and more!
 ### Show notes and highlights
 
 - Netboot - Sun Microsystems: https://www.netbsd.org/docs/network/netboot/intro.sun.html https://wiki.gentoo.org/wiki/Sparc/Netboot/de  
-- PCI - self defining hardware: https://www.pcisecuritystandards.org/pdfs/pci_ssc_quick_guide.pdf  
+- PCI - self defining hardware: https://en.wikipedia.org/wiki/Peripheral_Component_Interconnect
 - Dip switches and jumpers: https://www.oreilly.com/library/view/pc-hardware-in/059600513X/ch02s03s05.html  
 - VA Linux cluster: https://itsfoss.com/story-of-va-linux/ https://en.wikipedia.org/wiki/Geeknet
 - Intel L440 motherboard: https://www.ebay.com/c/1079625591
