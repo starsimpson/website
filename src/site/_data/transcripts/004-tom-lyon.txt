@@ -522,323 +522,323 @@ I had my day job at Amdahl work with mainframes.
 00:59:48 Bryan: That is a slow and painful death loop for sure, but even in that, you got it working to the point where you could have a shell.
 00:59:58 Tom: I got to the point where I can demonstrate that [unintelligible 01:00:00]
 actually worked, I was like, "Hallelujah." That was like, "Wow."
-01:00:06 Brian: Did that experience help get you the job at Amdahl?
+01:00:06 Bryan: Did that experience help get you the job at Amdahl?
 01:00:11 Tom: Yes. There's a whole series of serendipitous events here. I wanted to work at Bell Labs for the summer so I go through the normal interview processes. I end up interviewing with this guy who was doing something with the Unix, but it wasn't the research group and for whatever reason, he invites Ken Thompson down to impress me at lunch. Ken Thompson and I are having lunch with this guy and I started talking about this work I've done porting Unix to the 370 and Ken was like, "Holy cow, we're just about to start porting Unix to the Interdata."
-01:00:48 Brian: Oh, wow. Mission accomplished. Instead of Ken impressing you, you're impressing Ken.
+01:00:48 Bryan: Oh, wow. Mission accomplished. Instead of Ken impressing you, you're impressing Ken.
 01:00:54 Tom: Right. Ken stole me for the rest of the day and I ended up working with their Unix group for the summer.
 01:01:01 Jess: That's awesome.
 01:01:03 Tom: That was the main work converting V6 into the portable V7, which ended up everywhere.
-01:01:09 Brian: So, you're working in the Unix group in the summer of '75, '76
+01:01:09 Bryan: So, you're working in the Unix group in the summer of '75, '76
 01:01:12 Tom: '77.
-01:01:14 Brian: Wow, that is--
+01:01:14 Bryan: Wow, that is--
 01:01:17 Tom: Okay. Now, here's the other serendipitous thing. Ken had spent a year at Berkeley, I think '75, '76, and made some friends. All those friends, this guy named Denny Koch ended up working at Amdahl and then he was agitating we need to get a decent time-sharing system in here. At one point, I'm literally sitting in the Unix room with Ken Thompson, Ken gets a call from another guy at Amdahl. This guy in Amdahl is asking is asking Ken, "We hear rumors, there's like a-- could be a port somewhere of the Unix for a 370?" Ken says, "Tom it's for you." So, I ended up working for them.
-01:01:59 Brian: That's amazing. We're going to take another quick break. Then, I got so many follow-up questions. We'll take a quick break and we'll be right back with more Tom Lyon.
+01:01:59 Bryan: That's amazing. We're going to take another quick break. Then, I got so many follow-up questions. We'll take a quick break and we'll be right back with more Tom Lyon.
 [music]
 01:02:10 Steve: On The Metal is brought to you by the Oxide Computer Company. Well, bad news I just got back from meeting with the attorneys.
-01:02:16 Brian: Oh, boy.
+01:02:16 Bryan: Oh, boy.
 01:02:16 Steve: They are not going to let us say much in these ads. We can't talk about the customer experience today for on-premises infrastructure.
 01:02:25 Jess: So, we can't do my idea to be like, "Are you being gaslit by your vendors?" Because that's what they're doing. They're gaslighting people into thinking that these bugs only exists on one of their machines when it exists on everyone's.
 01:02:35 Steve: God. No, they called that I think, "a third rail."
-01:02:38 Brian: They must be following just on Twitter I knew that that was a bad idea they've got the lawyers apologize on Twitter.
+01:02:38 Bryan: They must be following just on Twitter I knew that that was a bad idea they've got the lawyers apologize on Twitter.
 01:02:43 Jess: They also said we can't talk about public cloud customer experience.
-01:02:47 Brian: Come on, we can't talk about the rapacious bandwidth pricing? It's practically criminal.
+01:02:47 Bryan: Come on, we can't talk about the rapacious bandwidth pricing? It's practically criminal.
 01:02:50 Steve: No, we can't talk about the unit economics of that at all.
-01:02:52 Brian: Can we use the word criminal with respect to public cloud vendors.
+01:02:52 Bryan: Can we use the word criminal with respect to public cloud vendors.
 01:02:55 Steve: Definitely not.
-01:02:55 Brian: Oh, boy. What can we do?
+01:02:55 Bryan: Oh, boy. What can we do?
 01:02:58 Steve: Well, they did say they gave us a statement we can use which is--
-01:03:01 Brian: Are you going to read from it?
+01:03:01 Bryan: Are you going to read from it?
 01:03:02 Steve: Oxide Computer Company is building something that should help some people.
-01:03:07 Brian: Well, that seems very direct come on, can we at least send them over to Oxide.computer?
+01:03:07 Bryan: Well, that seems very direct come on, can we at least send them over to Oxide.computer?
 01:03:12 Steve: We can, we can. The other bit of bad news is all the lawyers were there in the meeting.
-01:03:16 Brian: Wait a minute not just the cheap one but the expensive one?
+01:03:16 Bryan: Wait a minute not just the cheap one but the expensive one?
 01:03:19 Steve: Yes, they were all there.
-01:03:20 Brian: So, we paid a fortune to get this terrible ad. Oh my God, please listen, or go to Oxide.computer and learn what we're actually doing. All right, we're back. Jess, I don't know about you but I got a ton of follow up questions.
+01:03:20 Bryan: So, we paid a fortune to get this terrible ad. Oh my God, please listen, or go to Oxide.computer and learn what we're actually doing. All right, we're back. Jess, I don't know about you but I got a ton of follow up questions.
 01:03:32 Jess: No, that's all right though.
-01:03:34 Brian: Boy, if you give me a time machine, and allow me to set the dial anywhere, I might set it to Bell Labs.
+01:03:34 Bryan: Boy, if you give me a time machine, and allow me to set the dial anywhere, I might set it to Bell Labs.
 01:03:42 Jess: I would definitely do that.
-01:03:43 Brian: You got so many interesting folks, such an interesting collection of people and you're there for the summer basically as a summer intern effectively?
+01:03:43 Bryan: You got so many interesting folks, such an interesting collection of people and you're there for the summer basically as a summer intern effectively?
 01:03:49 Tom: Right. It was mind-boggling. Yes, Bell Labs in its heyday was incredible. They hired something like 30% of all PhDs in the US.
 01:04:01 Jess: Wow, that is a lot of PhDs.
 01:04:06 Tom: And awful lot of other people. The same summer I was working there my brother Bob, who's one year older, and his wife, Linda, they had both just graduated from Cornell and started working at Bell Labs also. I was in Murray Hill, they were at Holmdel, but I would take the Bell Labs bus over to see them for the weekend, that kind of stuff. They run the old Yacc program for you. You get sent off to get your master's degree paid for by Bell Labs and they both did that and they were living like kings because they both had half their salary while they were getting their masters and all.
-01:04:40 Brian: Right, not living the typical grad student life at all. That's great. There're so many incredible people there at that time doing so much interesting stuff.
+01:04:40 Bryan: Right, not living the typical grad student life at all. That's great. There're so many incredible people there at that time doing so much interesting stuff.
 01:04:52 Tom: Directly across the hall from me when I was there was Greg Chesson. Did you ever know Greg?
-01:04:57 Brian: I did not actually know Greg.
+01:04:57 Bryan: I did not actually know Greg.
 01:05:00 Tom: He was an amazing person always the funniest guy and super smart. He contributed an awful lot to SGI, that was his main purview, but he was doing networking back then that was very strange, pre-ATM kind of stuff.
-01:05:19 Brian: What does networking even look like in the 70s?
+01:05:19 Bryan: What does networking even look like in the 70s?
 01:05:24 Tom: Well, this stuff was very weird and this data kit, I never quite understood it.
-01:05:28 Brian: Interesting. You were with these amazing collection of folks was Joseph Osanna anywhere near you by any chance?
+01:05:28 Bryan: Interesting. You were with these amazing collection of folks was Joseph Osanna anywhere near you by any chance?
 01:05:36 Tom: Yes, Osanna was part of that crowd.
-01:05:40 Brian: Can I ask you a question that never got resolved? He died shortly thereafter.
+01:05:40 Bryan: Can I ask you a question that never got resolved? He died shortly thereafter.
 01:05:45 Tom: Right about the same time, yes.
-01:05:46 Brian: Do you know how he died?
+01:05:46 Bryan: Do you know how he died?
 01:05:48 Tom: I think it was a heart attack.
-01:05:50 Brian: Yes, I've heard with a heart attack and a car crush. He died suddenly.
+01:05:50 Bryan: Yes, I've heard with a heart attack and a car crush. He died suddenly.
 01:05:53 Tom: Yes.
-01:05:54 Brian: It was my understanding that he had written a bunch of-- Because he wrote the original nroff right? Or roff maybe.
+01:05:54 Bryan: It was my understanding that he had written a bunch of-- Because he wrote the original nroff right? Or roff maybe.
 01:06:04 Tom: Well, it was troff I think. Brian Carnahan just came out with a book that explains a lot [crosstalk]
-01:06:10 Brian: I've not read Brian's book, I need to go read it because supposedly, according to lore, Ossana is now deceased, and went into Ossana's code to actually-- The code had been ported to the C from Assembler.
+01:06:10 Bryan: I've not read Brian's book, I need to go read it because supposedly, according to lore, Ossana is now deceased, and went into Ossana's code to actually-- The code had been ported to the C from Assembler.
 01:06:28 Tom: Yes, I have some personal view there because I was busy porting code, cleaning up code, so it would port between the PDP-11 and the Interdata and was a little-endian, big-endian 16 bit, 32 bit, a lot of differences. I opened up nroff I'm like, "What the hell is this?."
-01:06:50 Brian: It is amazing. The nroff source is out there, you can go look at the nroff source and it is really like KK or equals octal 13? If YY [unintelligible 01:07:05] it's all magic numbers.
+01:06:50 Bryan: It is amazing. The nroff source is out there, you can go look at the nroff source and it is really like KK or equals octal 13? If YY [unintelligible 01:07:05] it's all magic numbers.
 01:07:08 Tom: It was clearly derived from Assembler.
 01:07:10 Interviewer: It's clearly derived from Assembler.
 01:07:11 Tom: Where they were just doing word-based stuff. They were very loose with types if they had any and everything broke moving to big-endian from that.
 01:07:23 Interviewer: Oh, I can only imagine.
 01:07:24 Tom: So, I just threw my hands. Someone else above my paygrade.
-01:07:28 Brian: Right, exactly. Well, I have to go see if he talks about it in his book, but Brian supposedly went into that code being like, "It's software people. How bad can it be? I'm going to go modernize this," and came out like, "I do not understand how this thing is working."
+01:07:28 Bryan: Right, exactly. Well, I have to go see if he talks about it in his book, but Brian supposedly went into that code being like, "It's software people. How bad can it be? I'm going to go modernize this," and came out like, "I do not understand how this thing is working."
 01:07:45 Tom: But he made it portable at some point.
-01:07:48 Brian: Yes, it's portable. When I first heard of that story as an undergraduate, I was being handed out from new factory someone who was at Princeton-- If you know, Tom Decker, at Princeton, but he would have been [crosstalk] a couple years behind you. My professor at school had described this to me and as I realized that this code was still very much in our source base at Sun, you realize that this is something that was written in the 70s, that is going to survive long past all of the hardware that was originally built for it. The software has this incredible permanence.
+01:07:48 Bryan: Yes, it's portable. When I first heard of that story as an undergraduate, I was being handed out from new factory someone who was at Princeton-- If you know, Tom Decker, at Princeton, but he would have been [crosstalk] a couple years behind you. My professor at school had described this to me and as I realized that this code was still very much in our source base at Sun, you realize that this is something that was written in the 70s, that is going to survive long past all of the hardware that was originally built for it. The software has this incredible permanence.
 01:08:22 Tom: The basic idea roff run off from the CTSS system, which is like the original time-sharing system ever. Then Brian Carnahan was a student at Princeton for a while he wrote a version of it for the IBM mainframe there, which saved my ass many times because that's how I wrote all my papers when I was at Princeton.
-01:08:41 Brian: Really?
+01:08:41 Bryan: Really?
 01:08:43 Tom: It was all card-based.
-01:08:45 Brian: So you wrote your papers in the IBM mainframe version of roff effectively?
+01:08:45 Bryan: So you wrote your papers in the IBM mainframe version of roff effectively?
 01:08:50 Tom: It was beautiful because you could stretch the margins all you want, and blah, blah, blah so you can always stretch that thing out to meet the minimum size.
-01:09:00 Brian: Jess, you're a law tech nerd. I think Tom just saw you and raised you you got to go like, "Raw roff if you really want to nerd it out."
+01:09:00 Bryan: Jess, you're a law tech nerd. I think Tom just saw you and raised you you got to go like, "Raw roff if you really want to nerd it out."
 01:09:11 Jess: Okay, I'll try that.
-01:09:11 Brian: That's the original language of man-pages. The man-pages were written all in there.
+01:09:11 Bryan: That's the original language of man-pages. The man-pages were written all in there.
 01:09:16 Jess: That's pretty readable.
-01:09:17 Brian: Yes.
+01:09:17 Bryan: Yes.
 01:09:17 Tom: Well, but man-pages have macros.
-01:09:19 Brian: That's right.
+01:09:19 Bryan: That's right.
 01:09:20 Tom: I don't think ours had macros.
-01:09:21 Brian: That's right. There you go. Macros, the kids today and their macros. Let me tell you, that is great. At that time, you're typesetting them, how are printing them? What are you printing them on? Your papers.
+01:09:21 Bryan: That's right. There you go. Macros, the kids today and their macros. Let me tell you, that is great. At that time, you're typesetting them, how are printing them? What are you printing them on? Your papers.
 01:09:38 Tom: You print them on these giant IBM line printers the IBM 1403 which came out with IBM-
-01:09:45 Brian: 1401
+01:09:45 Bryan: 1401
 01:09:45 Tom: -1401 computer around 1959. That thing was amazing 600 lines per minute, got this crazy print change, you could swap out for different fonts you can do different spacing.
-01:09:58 Brian: 600 lines per minute.
+01:09:58 Bryan: 600 lines per minute.
 01:09:59 Tom: You send out this direction saying, "Mount, the pure white paper, please."
-01:10:03 Brian: Right.
+01:10:03 Bryan: Right.
 01:10:04 Tom: Out spews your thesis or whatever.
-01:10:07 Brian: The IBM 1403 dates back to the 50s obviously. Late 50s, early 60s, and it's going 600 lines per minute, 10 lines a second.
+01:10:07 Bryan: The IBM 1403 dates back to the 50s obviously. Late 50s, early 60s, and it's going 600 lines per minute, 10 lines a second.
 01:10:16 Tom: Creating a terrific racket, and they have one fully restored now at the Computer Museum.
-01:10:20 Brian: Oh my god, that must be mesmerizing.
+01:10:20 Bryan: Oh my god, that must be mesmerizing.
 01:10:23 Tom: Yes. They even found one of the original IBM engineers to help them out with this crazy print chain thing.
-01:10:30 Brian: They may have needed it. This must have felt like this thing fell from space. You turned in your papers for your English class or whatever.
+01:10:30 Bryan: They may have needed it. This must have felt like this thing fell from space. You turned in your papers for your English class or whatever.
 01:10:39 Tom: Right.
-01:10:40 Brian: Did your professors in these other classes treat you as an alien from the future? [laughs] surely, you’re the only one--?
+01:10:40 Bryan: Did your professors in these other classes treat you as an alien from the future? [laughs] surely, you’re the only one--?
 01:10:48 Tom: It had been going on for a few years, I got a few funny looks, but you're supposed to typewrite things. It's not always immediately obvious.
-01:10:57 Brian: Okay, that's amazing. Sorry, you were using roff for that, that's pretty great. At Amdahl, you are porting AT&T Unix, Bell Labs Unix to their mainframes.
+01:10:57 Bryan: Okay, that's amazing. Sorry, you were using roff for that, that's pretty great. At Amdahl, you are porting AT&T Unix, Bell Labs Unix to their mainframes.
 01:11:15 Tom: Yes. I arrive at Amdahl-- I interviewed first in January 78, and the week after I interviewed with IBM where I got snowed in for an extra day. Out here it's gorgeous, wonderful weather. I was like, “Yes. I think I’ll come out here.”
-01:11:30 Brian: [laughs] some people like to overthink the allure of Silicon Valley. It's the weather stupid? It has drawn technologists here for time in memorial, it's like "The weather is pretty good."
+01:11:30 Bryan: [laughs] some people like to overthink the allure of Silicon Valley. It's the weather stupid? It has drawn technologists here for time in memorial, it's like "The weather is pretty good."
 01:11:44 Tom: Right. Then, Amdahl had me back for spring break to start consulting, start the project going. I physically brought my Unix on deck tapes with me and all science-- Made an agreement with Princeton to get the project, and I still have those deck types, which were recently recovered by the folks at the Living Computer Museum in Seattle.
-01:12:09 Brian: That is awesome. Have you been to the Living Computer Museum?
+01:12:09 Bryan: That is awesome. Have you been to the Living Computer Museum?
 01:12:12 Jess: No. I haven't been to the one in Seattle, but I want to.
 01:12:15 Tom: Yes. It’s mind-blowing. They have, I don't know, 20 or 30 working computers from the 70s era.
 01:12:22 Jess: That sounds dope.
-01:12:23 Brian: That is amazing. They've got it working there, they were able to extract the stuff off the tape.
+01:12:23 Bryan: That is amazing. They've got it working there, they were able to extract the stuff off the tape.
 01:12:27 Tom: Yes. They sent me a tiny little email containing everything.
 [laughter]
-01:12:32 Brian: It's an attachment now to an email. That is great. It must be really mesmerizing to look at your own work from so long ago.
+01:12:32 Bryan: It's an attachment now to an email. That is great. It must be really mesmerizing to look at your own work from so long ago.
 01:12:43 Tom: Yes. You can't really remember who did what, why, or anything. Anyway, Amdahl, this was still version 6 Unix because version 7 had not made it out of Bell Labs yet. We got that working, we wrote editors. One of my things I’m proudest of was doing a device driver for this IBM 3270 terminal. In the IBM world, everything is record-oriented, and the terminals must not disturb the mainframe unless absolutely necessary. It was all local form entry stuff.
-01:13:21 Brian: Interesting. They've got computational power on the terminal?
+01:13:21 Bryan: Interesting. They've got computational power on the terminal?
 01:13:25 Tom: Yes. Mostly, it got in the way of things.
-01:13:28 Brian: Right.
+01:13:28 Bryan: Right.
 01:13:29 Tom: Anyway, trying to get that to work with the Unix notion that everything's full-duplex. It was a challenge.
-01:13:35 Brian: Interesting.
+01:13:35 Bryan: Interesting.
 01:13:36 Tom: Anyway, we had a whole V6 system up with probably 100 internal users at Amdahl before V7 Unix ever came out. V7 was the portable Unix where it was easier to do that.
-01:13:51 Brian: Did Amdahl view Unix as a big part of their future? They're competing directly with IBM and making an IBM compatible mainframe effectively.
+01:13:51 Bryan: Did Amdahl view Unix as a big part of their future? They're competing directly with IBM and making an IBM compatible mainframe effectively.
 01:13:58 Tom: Yes. It started out just as a time zero system for the electronic design automation people to do stuff to further building hardware. Then, it leaked into the operating system for the console processor. The original Amdahl mainframe had a data general nova as a console processor, 16-bit machine. People were grumbling about that.
 The next generation, they were actually going to be 11 running Unix, but they were going to implement their own PDP-11 because you don't buy computers from another computer company, but they stumbled across a couple of patents, the famous UNIBUS patent, stuff like that. They said, “I'm not going to do PDP-11.” They ended up doing a 370 subset on this tiny little console processor, and so they ran Unix on that. It was buried inside all the Amdahl mainframes.
-01:14:54 Brian: Got it, okay. It was a smaller implementation detail?
+01:14:54 Bryan: Got it, okay. It was a smaller implementation detail?
 01:14:58 Tom: Later on, they came out with the actual UTS, they called it.
-01:15:04 Brian: The Unix hardware system, right?
+01:15:04 Bryan: The Unix hardware system, right?
 01:15:05 Tom: Unix, I don't know if it ever officially stood for anything. That was fairly popular, especially in the Bell System and many universities.
-01:15:14 Brian: Right. Then, you were at Amdahl until-- What lured you away? When did you first hear about this crazy company that was starting?
+01:15:14 Bryan: Right. Then, you were at Amdahl until-- What lured you away? When did you first hear about this crazy company that was starting?
 01:15:21 Tom: It turns out because of my mafia of brothers.
-01:15:26 Brian: True mafia. That is scary.
+01:15:26 Bryan: True mafia. That is scary.
 01:15:29 Tom: My brother Dick was working at Xerox PARC at the time, my brother bob was working in the Xerox Star Group, they had friends from Stanford, and the Sun stuff was, of course, happening at Stanford, all the Sun hardware development. The Valley was already a buzz, was like, “Cool processor board out of Stanford,” what could be done with this?
 At Amdahl, Berkeley had become the center of the west coast Unix universe because of Bill Joy, I had been up to Berkeley a few times, met him, chatted. One day, I get a call from this guy, Scott McNeely. He's like, “Hey, Tom, we're doing a little startup, have you ever heard of this thing called The Sun board?” “Yes. 68,000,” Scott is like ding, ding, ding, somebody heard of this. I was on Bill Joy's list of Unix people to call up.
-01:16:24 Brian: To call up.
+01:16:24 Bryan: To call up.
 01:16:25 Tom: That's why Scott got my name.
-01:16:26 Brian: That's great.
+01:16:26 Bryan: That's great.
 01:16:28 Tom: I was looking for a startup, basically, because it was still start-up fever all the way back then as well.
-01:16:35 Brian: Right.
+01:16:35 Bryan: Right.
 01:16:37 Tom: Yes. It's just what you did in Silicon Valley.
-01:16:38 Brian: Right. It's amazing how permanent that cultural idea is around new company formation.
+01:16:38 Bryan: Right. It's amazing how permanent that cultural idea is around new company formation.
 01:16:47 Tom: Yes. It worked out well. I was clueless about so many things back then, but it worked out.
-01:16:53 Brian: That's great, just to be really at the epicenter of it because you surely could not have guessed that Sun was going to be playing such a central role in the next 15 years effectively. I don't know, maybe it was clear from the beginning. I guess you had Bill Joy, you knew that between Bill Joy and Andy Beckelsheim this is like--
+01:16:53 Bryan: That's great, just to be really at the epicenter of it because you surely could not have guessed that Sun was going to be playing such a central role in the next 15 years effectively. I don't know, maybe it was clear from the beginning. I guess you had Bill Joy, you knew that between Bill Joy and Andy Beckelsheim this is like--
 01:17:13 Tom: Right. My exposure to the Xerox also stuff. That was the coolest thing ever in terms of personal computing, and then I was a [unintelligible 01:17:22] Unix guy by this time, bringing those two together was-
-01:17:27 Brian: Seemed natural.
+01:17:27 Bryan: Seemed natural.
 01:17:28 Tom: -it was perfect.
-01:17:28 Brian: When did you see the Xerox Alto? Is this through your brother that you'd see?
+01:17:28 Bryan: When did you see the Xerox Alto? Is this through your brother that you'd see?
 01:17:30 Tom: Yes. I’d been up to visit him.
-01:17:33 Brian: You've been up to visit him and you'd seen. That must have felt like seeing the future?
+01:17:33 Bryan: You've been up to visit him and you'd seen. That must have felt like seeing the future?
 01:17:38 Tom: Yes. I don't remember that well, but clearly, it was a hot place to be.
-01:17:46 Brian: Yes. I'm reading Dealers of Lightning now, which is a really interesting book about the development of Xerox PARC, but you forget that the laser printer was actually--
+01:17:46 Bryan: Yes. I'm reading Dealers of Lightning now, which is a really interesting book about the development of Xerox PARC, but you forget that the laser printer was actually--
 01:17:56 Tom: Oh god, they had generation after generation of these color printers where the pages would come out on fire, and all that.
 [laughter]
 01:18:04 Jess: That's cool.
-01:18:05 Brian: That's great. Boy, you could take the Alto, but what was the Alto running for an operating system?
+01:18:05 Bryan: That's great. Boy, you could take the Alto, but what was the Alto running for an operating system?
 01:18:10 Tom: A bunch of homegrown stuff. Xerox SPARC actually did a PDP-10 clone.
-01:18:17 Brian: They did a PDP-10 clone which I did not know until reading this book, it's a MAXC.
+01:18:17 Bryan: They did a PDP-10 clone which I did not know until reading this book, it's a MAXC.
 01:18:23 Tom: MAXC, they ran a whole lot of their own software, but some other software. They had file sharing and all that stuff.
-01:18:29 Brian: Yes. This is something that like Chuck Thacker put together in whatever it was, six months, they built their own machine from scratch, crazy.
+01:18:29 Bryan: Yes. This is something that like Chuck Thacker put together in whatever it was, six months, they built their own machine from scratch, crazy.
 01:18:36 Jess: That's crazy.
 01:18:38 Tom: Actually, that whole core group came out of Berkeley Computer Corporation.
-01:18:41 Brian: Yes. Berkeley Computer Corporation, yes. Which, again, I had not learned about until this book.
+01:18:41 Bryan: Yes. Berkeley Computer Corporation, yes. Which, again, I had not learned about until this book.
 01:18:45 Tom: Yes. I still don't know enough about them, but it was quite the seminal group.
-01:18:49 Brian: It feels like they burned through a lot of money. I would love to read a book on the Berkeley Computer Corporation because they clearly had a lot of good ideas, interesting people, but also [laughs] no real financial discipline.
+01:18:49 Bryan: It feels like they burned through a lot of money. I would love to read a book on the Berkeley Computer Corporation because they clearly had a lot of good ideas, interesting people, but also [laughs] no real financial discipline.
 01:19:04 Tom: Right.
-01:19:06 Brian: Another story that's as old as Silicon Valley for sure. You saw that this could be a big deal to combine these folks and these ideas, this is going to go places?
+01:19:06 Bryan: Another story that's as old as Silicon Valley for sure. You saw that this could be a big deal to combine these folks and these ideas, this is going to go places?
 01:19:16 Tom: Yes. I wasn't taking it too seriously because I felt like I was employable, so what the heck? Try something out.
-01:19:24 Brian: I feel that's actually an important point, I think the security of a fluid labor market allows you to take much greater risks in your career.
+01:19:24 Bryan: I feel that's actually an important point, I think the security of a fluid labor market allows you to take much greater risks in your career.
 01:19:37 Tom: Now, turns out I just bought a house with my brother Bob and his wife. We were divvying it up three ways, and this was a point in time when interest rates were about 15%.
-01:19:47 Brian: Oh, boy, right.
+01:19:47 Bryan: Oh, boy, right.
 01:19:48 Tom: The monthly mortgage was quite astounding, and he's like, “You're doing what?”
-01:19:54 Brian: Okay. He thought you were crazy.
+01:19:54 Bryan: Okay. He thought you were crazy.
 01:19:55 Tom: “You're going to a startup? What if, what if, what if.” I'm like, "Don't worry," and then a year later, he's joined me because everything's going so well.
-01:20:06 Brian: So he joined you pretty shortly thereafter?
+01:20:06 Bryan: So he joined you pretty shortly thereafter?
 01:20:08 Tom: Yes.
-01:20:09 Brian: It was pretty clear that it was-- because Sun did--
+01:20:09 Bryan: It was pretty clear that it was-- because Sun did--
 01:20:12 Tom: Oh, Sun was such a rocket. I joined in May of '82. The first revenue shipments were actually three megabit ethernet cards, and we did a whole stack of these for somebody. That was our first revenue in the same month, May. Then, first week of June, we shipped our first workstation.
-01:20:35 Brian: Wow.
+01:20:35 Bryan: Wow.
 01:20:35 Jess: Nice. That's fast.
-01:20:37 Brian: Yikes that's--
+01:20:37 Bryan: Yikes that's--
 01:20:38 Tom: It was rocket from there. Because everyone knew Bill Joy was joining, the entire Unix world-
-01:20:45 Brian: Was a buzz.
+01:20:45 Bryan: Was a buzz.
 01:20:45 Tom: -was a buzz. Then John Gage, he came on board as our sales guy. He was a terrible salesperson, but he knew every scientist, computer scientist, rock star, news person on the planet, and everybody knew all of a sudden, so it was great.
-01:21:04 Brian: That's great.
+01:21:04 Bryan: That's great.
 01:21:05 Jess: That's cool.
-01:21:06 Brian: Wow, that was great. Actually, behind you in the garage here, we have a-- I don't know if you know where this piece of artwork came from that was in Mountain View five somehow made its way to Menlo Park 17, which is where I found it in a trash pile with the optical mouse. We'll put a photo in the show notes because that is a machine that would overlap with you, right?
+01:21:06 Bryan: Wow, that was great. Actually, behind you in the garage here, we have a-- I don't know if you know where this piece of artwork came from that was in Mountain View five somehow made its way to Menlo Park 17, which is where I found it in a trash pile with the optical mouse. We'll put a photo in the show notes because that is a machine that would overlap with you, right?
 01:21:29 Tom: Yes. That's-- I don't know what it is. I have a story about a mouse though.
 01:21:36 Jess: Yes, that mouse is crazy.
-01:21:37 Brian: Go on. What's the story about the mouse?
+01:21:37 Bryan: Go on. What's the story about the mouse?
 01:21:39 Tom: My summer at Bell Labs, they put us up for housing at Farleigh Dickinson University. I shared a suite with five other guys also working for Bell Labs. One of them was Steve Kirsch from MIT who importantly taught me how to juggle that summer because that's a computer science thing. You go to know how to juggle. He went on to form Mouse Systems Corporation. He invented this mouse that's in the drawer.
-01:22:07 Brian: The optical mouse.
+01:22:07 Bryan: The optical mouse.
 01:22:08 Tom: Yes.
-01:22:08 Brian: Wow.
+01:22:08 Bryan: Wow.
 01:22:10 Tom: He invented the optical mouse, as well as my brother Dick also did it at Xerox.
-01:22:15 Brian: Wow.
+01:22:15 Bryan: Wow.
 01:22:16 Jess: That's cool.
 01:22:17 Tom: Completely independently.
-01:22:18 Brian: Completely independently.
+01:22:18 Bryan: Completely independently.
 01:22:19 Tom: Right.
-01:22:21 Brian: Obviously, with an optical mouse on the wall, the optical mouse is the center of conversation around here.
+01:22:21 Bryan: Obviously, with an optical mouse on the wall, the optical mouse is the center of conversation around here.
 01:22:25 Jess: Yes, definitely come out.
-01:22:26 Brian: These predate the rollerball effectively, or was this more precise than the rollerball? Why the optical mouse?
+01:22:26 Bryan: These predate the rollerball effectively, or was this more precise than the rollerball? Why the optical mouse?
 01:22:33 Tom: It's more reliable because you can always get gunk in the rollerballs.
 01:22:36 Jess: Oh, God. Yes, that's so gross. I remember cleaning out the dust. Oh, I just remember that. Sorry. That was very vivid [chuckles].
 01:22:44 Tom: Yes. It was a much better experience with the optical.
-01:22:48 Brian: And more precise for EDA and so on. Interesting. Wow, so he independently invented it?
+01:22:48 Bryan: And more precise for EDA and so on. Interesting. Wow, so he independently invented it?
 01:22:56 Tom: Right. My brother did a Xerox technical report on the optical mouse, and it was the first Xerox technical report printed with color inserts from their brand new color laser printers. That dates it.
-01:23:13 Brian: That dates it. When is it?
+01:23:13 Bryan: That dates it. When is it?
 01:23:17 Tom: 1980.
-01:23:17 Brian: Yes, Xerox in the very early '80s. The laser printer itself, I'm reading about the trials and tribulations of just getting that thing working. Boy, that's amazing. The optical mouse, it's since obviously fallen away I think because these mice, I don't know if your brother's was the same way, but they required the mouse pad-
+01:23:17 Bryan: Yes, Xerox in the very early '80s. The laser printer itself, I'm reading about the trials and tribulations of just getting that thing working. Boy, that's amazing. The optical mouse, it's since obviously fallen away I think because these mice, I don't know if your brother's was the same way, but they required the mouse pad-
 01:23:38 Tom: Required a pad.
-01:23:39 Brian: -have a particular orientation. If you flipped it 90 degrees, it no longer worked.
+01:23:39 Bryan: -have a particular orientation. If you flipped it 90 degrees, it no longer worked.
 01:23:42 Tom: Yes. Well, my brother's was orientation-independent, which was cool. The pad was a grid of dots in a hexagonal pattern. I never quite figured out how that worked, but it worked no matter how you turned it.
-01:23:59 Brian: It sounds like that's the better technology.
+01:23:59 Bryan: It sounds like that's the better technology.
 01:24:02 Tom: Yes.
-01:24:03 Brian: Because the Sun technology I was told was a little bit brittle because the orientation of your mouse pad would screw you up. Fast forward, beyond Sun, you went to Ipsilon. I arrived in '96. I feel like you left maybe in '95 or '94, something like that.
+01:24:03 Bryan: Because the Sun technology I was told was a little bit brittle because the orientation of your mouse pad would screw you up. Fast forward, beyond Sun, you went to Ipsilon. I arrived in '96. I feel like you left maybe in '95 or '94, something like that.
 01:24:20 Tom: '94.
-01:24:21 Brian: '94, right, yes.
+01:24:21 Bryan: '94, right, yes.
 01:24:23 Tom: I got caught up in ATM networking. The short description of ATM is it's the kind of ATM you only put money into.
-01:24:32 Brian: Oh, ATM humor. ATM is a technology you would not necessarily-
+01:24:32 Bryan: Oh, ATM humor. ATM is a technology you would not necessarily-
 01:24:41 Jess: I thought you meant like an ATM machine.
-01:24:43 Brian: No, but that's the joke. No ATM is Asynchronous Transfer Mode. This was a frequently hated-upon protocol, I dare say. The knock on this was this is the way for the telcos to actually meter the internet. That's fair or not.
+01:24:43 Bryan: No, but that's the joke. No ATM is Asynchronous Transfer Mode. This was a frequently hated-upon protocol, I dare say. The knock on this was this is the way for the telcos to actually meter the internet. That's fair or not.
 01:25:00 Tom: It definitely came out of the telco world. It was very odd because it had 48-byte packets with five-byte headers. It was guaranteed not to fit with anything else. As for the synchronous phone world, envisioning a world where everything worked with no buffering at all anywhere, it was just not the world we have today. What was cool about ATM is you could easily visualize how to build a switch, and switches came from the telephone world of voice switches.
-01:25:35 Brian: It's appealing you've got these, all packets are the same size, there's constant small size. There are lots of things that are--
+01:25:35 Bryan: It's appealing you've got these, all packets are the same size, there's constant small size. There are lots of things that are--
 01:25:44 Tom: That's what struck me and I was like, "Ah, you could build a switch with these." Little did I realize that there were people starting to build ethernet switches at the same time, but it just wasn't as obvious how you would do that.
-01:25:55 Brian: Yes, I remember I think when I first moved out to Silicon Valley, I subscribed to the Red Herring magazine, as one did back in the day. I think one of the first Red Herrings I have is Andy Bechtolsheim with the Death to ATM cover with him because he was at a company called Granite that was doing ethernet switching. Ipsilon was doing ATM switching effectively.
+01:25:55 Bryan: Yes, I remember I think when I first moved out to Silicon Valley, I subscribed to the Red Herring magazine, as one did back in the day. I think one of the first Red Herrings I have is Andy Bechtolsheim with the Death to ATM cover with him because he was at a company called Granite that was doing ethernet switching. Ipsilon was doing ATM switching effectively.
 01:26:21 Tom: We set off with observation that the ATM standards, they were building brand new random stuff that the telcos liked, that had no bearing whatsoever on what you would like a TCP/IP network to look like. I came along and said, "Look, get rid of all that higher-level protocol stuff. We're just going to operate the ATM switches with IP routing."
-01:26:42 Brian: Oh, interesting, and hence in Ip in Ipsilon.
+01:26:42 Bryan: Oh, interesting, and hence in Ip in Ipsilon.
 01:26:47 Tom: We called it IP switching because you were able to switch IP packets at ridiculous speeds. It was all pretty clever. What was really fun was kicking Cisco in the shins, because at the time, Cisco sold lots and lots of routers, but they were all based on relatively slow MIPS chips and the forwarding was all done in software. Even a Sun workstation could do a better job than a Cisco router. ATM switch was orders of magnitude faster.
-01:27:19 Brian: Right, because you're able to presumably do a lot of this without actually having to even-- were you doing it in silicon, or were you able to do [crosstalk].
+01:27:19 Bryan: Right, because you're able to presumably do a lot of this without actually having to even-- were you doing it in silicon, or were you able to do [crosstalk].
 01:27:24 Tom: Yes, the ATM switches were all silicon data path. We had to surround the ATM fabric with software that would put things on the right channel, basically, so there was some software, some hardware, blah, blah, blah. Anyway, we did a lot of partnering with ATM switch companies. In some ways, we invented a core of some of the software-defined networking stuff you see today.
-01:27:47 Brian: Oh, interesting.
+01:27:47 Bryan: Oh, interesting.
 01:27:49 Tom: Because we were managing a switch from the outside, so the control and the switching were separated. It was a fun time.
-01:27:57 Brian: Yes, that sounds fun, and Ipsilon was awfully bought by Nokia, if I remember correctly?
+01:27:57 Bryan: Yes, that sounds fun, and Ipsilon was awfully bought by Nokia, if I remember correctly?
 01:28:02 Tom: That's right. It wasn't that long into Ipsilon when people figured it out that ethernet switching was going to be the way to go. There were all kinds of startups. We actually had a team of hardware people come to us and say, "Hey, you should hire us. We'll do an ethernet-based thing for you." We said, "No," and they went off to be very successful. We missed the boat in a couple of ways. Same thing, one of our key guys left and became a founder at Juniper Networks.
-01:28:32 Brian: Oh, there you go.
+01:28:32 Bryan: Oh, there you go.
 01:28:34 Tom: They did IP routing directly in hardware. It was all going downhill when we were talking to Nokia. Nokia coming from the telco world, we thought they wanted all this ATM stuff, which we were at the point of saying, "This is never going to fly." There was this weird tap dance when it finally came out that what Nokia wanted was some IP routing expertise. I was like, "Oh, hallelujah. This is perfect."
-01:28:58 Brian: That's always funny, right, when you're trying to impress them with all of your ATM savvy. They were actually much more interested than the IP instance?
+01:28:58 Bryan: That's always funny, right, when you're trying to impress them with all of your ATM savvy. They were actually much more interested than the IP instance?
 01:29:07 Tom: Yes.
-01:29:08 Brian: That's interesting. Then how long were you at Nokia? Or were you at Nokia?
+01:29:08 Bryan: That's interesting. Then how long were you at Nokia? Or were you at Nokia?
 01:29:12 Tom: Yes, probably three years or so.
-01:29:14 Brian: Okay, interesting.
+01:29:14 Bryan: Okay, interesting.
 01:29:15 Tom: Many trips to Helsinki, which was a fun time. This was when Nokia was king of the world. Year 2000 they were the most valuable company in Europe.
-01:29:27 Brian: You must have had a Nokia. Did you have a Nokia phone?
+01:29:27 Bryan: You must have had a Nokia. Did you have a Nokia phone?
 01:29:29 Jess: Yes, I did. I had the one that everyone had that you could play Snake on.
-01:29:33 Brian: Exactly. This is going to date you in not long. It already does date you actually.
+01:29:33 Bryan: Exactly. This is going to date you in not long. It already does date you actually.
 01:29:38 Jess: That's the one everyone had.
-01:29:39 Brian: I know but I'm just saying like the Gen Z years coming up are going to view you as like, "Wow, you are really old."
+01:29:39 Bryan: I know but I'm just saying like the Gen Z years coming up are going to view you as like, "Wow, you are really old."
 01:29:43 Tom: You can buy brand new phones that are clones of those, and Snake is still one of the key features.
 01:29:50 Jess: Wow, nice. I don't even remember the model number. I feel shame right now, I can't. It was very popular.
 01:29:57 Tom: There were a lot of models.
-01:29:59 Brian: Yes. Nokia I think was the first phone I had that had a built-in camera, which was great but of course, I was much older. Interesting and then after Nokia where did you end up?
+01:29:59 Bryan: Yes. Nokia I think was the first phone I had that had a built-in camera, which was great but of course, I was much older. Interesting and then after Nokia where did you end up?
 01:30:09 Tom: After Nokia I had my first retirement or a little drown and consulted with some VCs and had a nice office in downtown Palo Alto.
-01:30:18 Brian: There you go.
+01:30:18 Bryan: There you go.
 01:30:18 Jess: Nice.
 01:30:19 Tom: The major thing I accomplished then was getting into Linux, because I had been a FreeBSD guy at Ipsilon, so that was 2001. Then eventually, at [unintelligible 01:30:31] I started another startup, it was called Netilion and I pulled some people out of Sun, et cetera. Satya Nishtala, who's my co-founder now, DriveScale, that's when I pulled him out of Sun.
-01:30:44 Brian: Got it.
+01:30:44 Bryan: Got it.
 01:30:44 Tom: We were going to do a distributed shared memory product for basically connecting CPUs to be SMPS over ethernet and it was way too early for that.
-01:30:55 Brian: Yes, it was early.
+01:30:55 Bryan: Yes, it was early.
 01:30:56 Tom: Yes, and we discovered two other companies who were already doing it. which one of them survives today, amazingly ScaleMP and doing just that.
-01:31:08 Brian: Wow.
+01:31:08 Bryan: Wow.
 01:31:09 Tom: We fiddled around for a year and the VCs didn't really see anything interesting so they said, "I think you're done." I went around trying to sell the group of engineers to whoever was interested and talked to Cisco. At that time, the core team from Cisco, which is MPLS, Mario, Prem, Luca, Soni, they were leaving Cisco to start a new startup/spin in. They had done this spin in previously for fibre channel stuff.
-01:31:45 Brian: This is Nuova, right? This is got to be Nuova.
+01:31:45 Bryan: This is Nuova, right? This is got to be Nuova.
 01:31:46 Tom: Nuova, that's what they were forming. They saw I was loose, they called me up and it was good because I brought a whole engineering team with me as a co-founder of Nuova.
-01:31:59 Brian: All right, we will be taking another break. We'll be right back with Tom Lyon and more On The Metal.
+01:31:59 Bryan: All right, we will be taking another break. We'll be right back with Tom Lyon and more On The Metal.
 [music]
-01:32:06 Brian: On The Metal is brought to you by the oxide computer company where we're going to try a new feature shamelessly ripped off of replies yes, yes, no, where our boss Steve Tuck brings us a tweet he does not understand and Jess and I try to explain it to him. Steve, do you have a tweet?
+01:32:06 Bryan: On The Metal is brought to you by the oxide computer company where we're going to try a new feature shamelessly ripped off of replies yes, yes, no, where our boss Steve Tuck brings us a tweet he does not understand and Jess and I try to explain it to him. Steve, do you have a tweet?
 01:32:20 Steve: I sure do.
-01:32:21 Brian: Go for it.
+01:32:21 Bryan: Go for it.
 01:32:21 Steve: The tweet in question, UEFI preboot network stack engage the onboard NIC in such a way that it would write back DMA to particular physical memory pages sometime after control was passed to the bootloader. Corruption would occur somewhere in the user parts of the RAM disk. No idea. No idea. Jess, do you understand this tweet?
 01:32:42 Jess: I understand definitely the part about the UEFI pre-boot networking stack, but the part about DMA is in question mark, so I guess not really sure where that's going.
-01:32:53 Brian: You're overthinking it. I understand this tweet running on-prem is painful. This is dealing with an awful, awful firmware bug. Firmware has overwritten part of the operating system in a way that is extremely painful to debug.
+01:32:53 Bryan: You're overthinking it. I understand this tweet running on-prem is painful. This is dealing with an awful, awful firmware bug. Firmware has overwritten part of the operating system in a way that is extremely painful to debug.
 01:33:07 Steve: So who do you go to in that case?
-01:33:08 Brian: Who do you go to?
+01:33:08 Bryan: Who do you go to?
 01:33:08 Jess: You definitely strangle one of your vendors.
-01:33:11 Brian: You strangle your vendors. Unfortunately, your vendor is a PC vendor because all the existing computer companies are selling personal computers. What we need is a new computer company.
+01:33:11 Bryan: You strangle your vendors. Unfortunately, your vendor is a PC vendor because all the existing computer companies are selling personal computers. What we need is a new computer company.
 01:33:21 Steve: This is just saying I'm in intense pain trying to run systems on-premises?
-01:33:26 Brian: That's exactly what it's saying. Steve, what can someone do if they're in intense pain running on-promises?
+01:33:26 Bryan: That's exactly what it's saying. Steve, what can someone do if they're in intense pain running on-promises?
 01:33:30 Steve: If someone is running in intense pain on promises, what they should do is go over to oxide.computer to learn a little bit more about how we are going to take that pain away.
 01:33:38 Brain: Help is on the way join us at oxide.computer.
 01:33:42 Jess: You are not alone.
 [music]
-01:33:48 Brian: All right, we're back with Tom. Tom, as you know, Jess and I along with Steve Tuck have started a computer company. Oxide Computer Company and as a result, we have gone back through history about when are the recent attempts at doing this and Nuova is obviously one of the big ones, one of the important ones. It is a computer company that started in the early 2000s effectively.
+01:33:48 Bryan: All right, we're back with Tom. Tom, as you know, Jess and I along with Steve Tuck have started a computer company. Oxide Computer Company and as a result, we have gone back through history about when are the recent attempts at doing this and Nuova is obviously one of the big ones, one of the important ones. It is a computer company that started in the early 2000s effectively.
 01:34:11 Tom: 2005.
-01:34:13 Brian: Right, by the MPLS crew. MPLS is a protocol, but it's also the names of the--
+01:34:13 Bryan: Right, by the MPLS crew. MPLS is a protocol, but it's also the names of the--
 01:34:23 Tom: The initials of Mario, Pren, Luca, and Soni, this gang that have been together ever since that crescendo communication, so did the physical layer stuff and then Mario ran all of engineering at Cisco. Luca was his right-hand, Prem has been everywhere, he's really good. It was a gang to contend with. It was a no-brainer for me to join them and then that became Nuova Systems.
-01:34:54 Brian: Nuova is where you're going to take off from scratch approach or try to take a clean sheet of paper on the computing?
+01:34:54 Bryan: Nuova is where you're going to take off from scratch approach or try to take a clean sheet of paper on the computing?
 01:34:58 Tom: Yes, basically they were saying, "Look, there's this wall between servers and networking that doesn't really have to be there. How can we rethink who does what and in some more efficient way?" We did a lot of interesting stuff, but business-wise, it became structured as a spin in because Mario had the power to hire absolutely anyone he wanted from Cisco. To stop that happening, Cisco had to come up with a framework for--
 [laughter]
-01:35:27 Brian: That is great. It's a preventative acquisition. The only way to actually prevent you from just hiring away our best and brightest is to actually acquire you?
+01:35:27 Bryan: That is great. It's a preventative acquisition. The only way to actually prevent you from just hiring away our best and brightest is to actually acquire you?
 01:35:38 Tom: Right. We did the second best thing which was to hire away all the people who had already left Cisco that he knew reals good. In particular, we got JR Rivers, and then when Lenoski, I think they both came out of Google and they're both amazing people. The first product we did was a 10 gig ethernet switch in a way that was really the first economical 10 gig ethernet switch.
-01:36:01 Brian: Oh, interesting. I didn't realize that you guys did you own switch, okay.
+01:36:01 Bryan: Oh, interesting. I didn't realize that you guys did you own switch, okay.
 01:36:04 Tom: Cisco knew how to sell switches so it was a no-brainer. It pissed off a lot of people in Cisco who are also building 10 gig switches.
-01:36:11 Brian: With the structure that this had been, it was a spin in so it was acquired very shortly after?
+01:36:11 Bryan: With the structure that this had been, it was a spin in so it was acquired very shortly after?
 01:36:18 Tom: Yes, basically, after we hit the development milestones then we were acquired.
-01:36:23 Brian: Okay, got it, but you're an independent group effectively within Cisco?
+01:36:23 Bryan: Okay, got it, but you're an independent group effectively within Cisco?
 01:36:26 Tom: Right, but then doing the switch, we viewed that as the easy part and we wanted to do something more significant with servers and whatever. That was a much more difficult discussion with Cisco because they didn't know how to sell servers.
-01:36:40 Brian: Right. You said switches, I don't know, I said servers? I heard switches.
+01:36:40 Bryan: Right. You said switches, I don't know, I said servers? I heard switches.
 01:36:45 Tom: Right. That took quite a while to iron that out, but then we did the UCS system, which had a number of really interesting things about it, including one of the first smart NICs-- What happened on the PCI bus was really controlled by the network, not by the server.
-01:37:04 Brian: Interesting. Was that the VIC? The VIC [crosstalk]
+01:37:04 Bryan: Interesting. Was that the VIC? The VIC [crosstalk]
 01:37:10 Tom: We never called that internally but that's external name.
-01:37:13 Brian: Yes, exactly. That's how I know. What did you call it internally?
+01:37:13 Bryan: Yes, exactly. That's how I know. What did you call it internally?
 01:37:16 Tom: The Palo. After Palo Alto.
-01:37:18 Brian: After Palo Alto. All right, now Jess, you and I can be cool with the VIC crowd, we can be called The Palo.
+01:37:18 Bryan: After Palo Alto. All right, now Jess, you and I can be cool with the VIC crowd, we can be called The Palo.
 01:37:24 Tom: We also had a Menlo chip, but that was not cool. That was just a fiber channel translator.
-01:37:29 Brian: Okay. All right. so Palo was much cooler than Menlo.
+01:37:29 Bryan: Okay. All right. so Palo was much cooler than Menlo.
 01:37:31 Tom: That's good.
 01:37:32 Jess: Get it out. Oh, boy.
-01:37:33 Brian: Yes, but you guys were also doing some special things on firmware, right? Because I know there were some interesting BMC work going on--
+01:37:33 Bryan: Yes, but you guys were also doing some special things on firmware, right? Because I know there were some interesting BMC work going on--
 01:37:41 Tom: Yes. We've had a very tight relationship with Intel because they were happy to see another contender in the server world, so we did a lot of firmware work with them. Again, all pointed at making things more manageable, which remains a huge problem with BMC today.
-01:37:58 Brian: Huge problem.
+01:37:58 Bryan: Huge problem.
 01:37:59 Tom: Cisco UCS had the server profile thing where you could really control the whole identity of the server, MAC addresses, and UUIDs and all that kind of stuff so you can move that identity around between different physical pieces of hardware.
-01:38:12 Brian: What were some of the big lessons of that in terms of what worked? I feel like this is like one of really the last attempts at taking things from scratch that are not in the hyperscalers. It was in this and it became UCS. What were some of the things that really worked from them?
+01:38:12 Bryan: What were some of the big lessons of that in terms of what worked? I feel like this is like one of really the last attempts at taking things from scratch that are not in the hyperscalers. It was in this and it became UCS. What were some of the things that really worked from them?
 01:38:29 Tom: A lot of it never quite mattered because everything ended up in virtual machines. It became a very, very VMware-centric product. Then, VMware was taking over a lot of the management stuff. Then it became this uneasy tension between Cisco and VMware about who's doing what and why. I was fortunately not deeply involved in all that, but I didn't. As soon as Cisco took us over I checked out anyways because the Cisco culture is so alien to me.
-01:39:05 Brian: I think that if open firmware had been around, a lot of the challenges from Nouva sounds like were dealing with some of all the proprietary firmware that you had to go partner with effectively--?
+01:39:05 Bryan: I think that if open firmware had been around, a lot of the challenges from Nouva sounds like were dealing with some of all the proprietary firmware that you had to go partner with effectively--?
 01:39:17 Tom: There's that. We did a necessarily complex system in my view-
-01:39:23 Brian: Oh, interesting.
+01:39:23 Bryan: Oh, interesting.
 01:39:23 Tom: -where we had not only the firmware on the server boards, but we had a local switch in the server box. Only it wasn't a switch, it was a fabric extender, which was a new concept. Then the switch was top of the rack and we're doing software up and down the stack. We're doing chips for all these things.
-01:39:41 Brian: Okay. Wow.
+01:39:41 Bryan: Okay. Wow.
 01:39:42 Tom: There was a lot of stuff going on.
-01:39:43 Brian: That was all internal, the Cisco's, the budget is actually much larger basically.
+01:39:43 Bryan: That was all internal, the Cisco's, the budget is actually much larger basically.
 01:39:46 Tom: Even at Nuova, we were doing like six chips at once.
-01:39:50 Brian: Wow. Wow.
+01:39:50 Bryan: Wow. Wow.
 01:39:53 Tom: That was pretty silly, but we had the people who could crank these things out.
-01:39:56 Brian: That's amazing, so you left Nuova at some point?
+01:39:56 Bryan: That's amazing, so you left Nuova at some point?
 01:40:00 Tom: I've invested in peace at Cisco.
 01:40:02 Bryan: You've invested in peace as they say. It was DriveScale time. DriveScale, was then--?
 01:40:07 Tom: Actually, the thing I did at Cisco which was a research project for me it was I got interested in low latency networking and why does InfiniBand claimed to be so much faster than ethernet [unintelligible 01:40:19] Basically, did a user-level framework for Ethernet drivers which turned into the VFIO subsystem in the Linux Kernel. I'm proud of that, of creating a framework where you can actually do user-level drivers safely.
@@ -881,7 +881,7 @@ I think it's interesting to me how many folks who remember when C replaced Assem
 01:43:48 Tom: I really want to. I don't know if I have some excuse to [crosstalk]
 01:43:50 Bryan: You've got to find some excuse. Here's what I think you what I found. You remember when you're programming C, you could feel the underlying Assembly?
 01:43:58 Tom: Yes.
-01:43:59 Brian: With Rust, I think you can feel the underlying C. I think as a veteran C programmer, Rust will have less of a learning curve for you because I think that some of the things that it wants to do, I don't know if your Java programmer, Python programmer or something, it's going to be very confusing about why the Rust compiler is being upset about various things. The actual, the ownership model makes so much intuitive sense if you're coming from C, I think. I feel that's a great tour from Roff from the mainframe to 600 lines per minute of printing to Rust. Tom, we cannot thank you enough. This has been just--
+01:43:59 Bryan: With Rust, I think you can feel the underlying C. I think as a veteran C programmer, Rust will have less of a learning curve for you because I think that some of the things that it wants to do, I don't know if your Java programmer, Python programmer or something, it's going to be very confusing about why the Rust compiler is being upset about various things. The actual, the ownership model makes so much intuitive sense if you're coming from C, I think. I feel that's a great tour from Roff from the mainframe to 600 lines per minute of printing to Rust. Tom, we cannot thank you enough. This has been just--
 01:44:44 Tom: You're throwing me out already.
 01:44:45 Bryan: We can go. I feel that this could go on for days because I think there's so much interesting stuff out there.
 01:44:55 Tom: We haven't really talked about DriveScale, but the short--
