@@ -142,9 +142,9 @@ Let's actually turn it way back down a little bit because you obviously like to 
 00:19:16 Jon: Then there's the storage unit. The thing is, my fiance has never seen the storage unit because it just wouldn't end well.
 00:19:25 Bryan: God, please, let that won’t be our Storage Wars, please.
 [laughter]
-Please, do not pay for that storage unit. I love to watch their expression when they throw that one open. They'd be like, "Oh my God, it's a bunch of PR RISC machine."
-00:19:36 Jon: Actually, I have a PA RISC at home in the office. There's an 8000 in the office.
-00:19:43 Bryan: Now, as I recall, you actually spoke to some PA RISC engineers at some point.
+Please, do not pay for that storage unit. I love to watch their expression when they throw that one open. They'd be like, "Oh my God, it's a bunch of PA-RISC machines."
+00:19:36 Jon: Actually, I have a PA-RISC at home in the office. There's an 8000 in the office.
+00:19:43 Bryan: Now, as I recall, you actually spoke to some PA-RISC engineers at some point.
 00:19:46 Jon: I did, yes. I went through the back catalog of different architectures and reached out to people I knew. I was like, "What do you think about this thing that you worked on? Do you think it would be horribly vulnerable?"
 00:19:58 Bryan: What did they say?
 00:19:58 Jon: They were like, "Oh, yes."
