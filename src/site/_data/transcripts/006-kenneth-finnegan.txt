@@ -174,7 +174,7 @@ That's why ISPs get real cranky when you saturate your port because their busine
 Internet exchanges are just a shortcut. There really isn't that much money in it. If you're not an absolutely enormous, hugely valuable internet exchange that has gotten past the critical mass point, and you've become as valuable as the rest of the internet because you have so many networks connected to you, if you're not up to that point yet, it's incredibly hard to run it as a business.
 All of our sponsors were more than happy to support us because we were willing to put in the effort to something that makes the internet better, but no one else wants to do it because there's no money in it. Everyone was more than happy to give us hardware. Every year, our regional internet registry fees come up for the address space we need, and that's $250. Every year around April, I pass the hat around like, "All right guys. We need $250," and everyone chucks $20, $50, $100. They're like, "Yes, $20 is great for something that's amusing."
 That's how it started. It has just been this whole cacophony of there's the root DNS servers that act as the authoritative source for the beginning of any DNS resolution. One of them is Verisign. Verisign has a little web form you can fill out and say, "Hey, I'm an internet exchange point or major peering provider. We would like one of your root DNS server appliances, which is a one-use server, shipped to us to host for an exchange." We fill out the form.
-The next morning, I wake up to an email from Verisign saying, "Congratulations, you're approved." Verisign ships us a route server. The Fremont Cabal Internet Exchange now has one of the 13 authoritative root DNS servers.
+The next morning, I wake up to an email from Verisign saying, "Congratulations, you're approved." Verisign ships us a root server. The Fremont Cabal Internet Exchange now has one of the 13 authoritative root DNS servers.
 00:31:30 Bryan: You're [unintelligible 00:31:30] like the Forrest Gump of the internet.
 00:31:32 Steve: I was going to say did Ford get in? You've got that big truck outside?
 00:31:36 Jessie: [unintelligible 00:31:36].
@@ -187,8 +187,9 @@ The next morning, I wake up to an email from Verisign saying, "Congratulations, 
 00:31:56 Bryan: [unintelligible 00:31:56] and Electric.
 00:31:58 Kenneth: That's my sage business advice is if you want to sell your thing, give it away for free and make it up from volume.
 00:32:03 Bryan: All right, listen, we've got to take a quick break, and then we're going to be back with more of Kenneth On The metal.
+00:32:08 Kenneth: Excelent.
 [music]
-00:32:10 Bryan: On The Metal is brought to you by the Oxide computer company where we're going to try a new feature shamelessly ripped off of our [unintelligible 00:32:16] yes, yes, no, where our boss, Steve Tuck brings us a tweet he does not understand, and Jess and I try to explain it to him. Steve, do you have a tweet?
+00:32:10 Bryan: On The Metal is brought to you by the Oxide Computer Company where we're going to try a new feature shamelessly ripped off of our [unintelligible 00:32:16] yes, yes, no, where our boss, Steve Tuck brings us a tweet he does not understand, and Jess and I try to explain it to him. Steve, do you have a tweet?
 00:32:24 Steve: I sure do.
 00:32:25 Bryan: Go for it.
 00:32:26 Steve: The tweet in question, UEFI pre-boot network stack engage the onboard net in such a way that it would write back DMA to particular physical memory pages sometime after control was passed to the bootloader. Corruption would occur somewhere in the user parts of the RAM disc. No idea.
@@ -204,12 +205,12 @@ The next morning, I wake up to an email from Verisign saying, "Congratulations, 
 00:33:34 Steve: If someone is running in intense pain on-premises, what they should do is go over to oxide.computer to learn a little bit more about how we are going to take that pain away.
 00:33:42 Bryan: Help is on the way. Join us at oxide.computer.
 00:33:46 Jessie: You are not alone.
-[00:33:51] Bryan All right, we are back. Kenneth, when we last tuned in, you've got the Fremont Internet Cabal is growing without bounds. You've got corporate America is stumbling over itself to give you free gear.
+[00:33:51] Bryan: All right, we are back. Kenneth, when we last tuned in, you've got the Fremont Internet Cabal is growing without bounds. You've got people corporate America is stumbling over itself to give you free gear.
 00:34:05 Kenneth: [crosstalk] [unintelligible 00:34:05].
 00:34:07 Bryan: Exactly. I'm waiting for SoftBank--
 00:34:09 Kenneth: Where does it end?
 00:34:10 Bryan: SoftBank is going to come in here and give you $200 million here. I'm waiting for that.
-00:34:13 Kenneth: It's something. It keeps going. Then you start looking at the CDNs, the content distribution networks. Someone like Netflix or Google, when video really took off, they ran into this unsolvable problem that the internet just isn't good enough for Netflix. When you look at something like YouTube or Netflix that makes up 50% of the bandwidth in the entire global internet, the internet just isn't good enough for them. They start needing to embed their servers in the end IFPs.
+00:34:13 Kenneth: It's something. It keeps going, you know. Then you start looking at the CDNs, the content distribution networks. Someone like Netflix or Google, when video really took off, they ran into this unsolvable problem that the internet just isn't good enough for Netflix. When you look at something like YouTube or Netflix that makes up 50% of the bandwidth in the entire global internet, the internet just isn't good enough for them. They start needing to embed their servers in the end ISPs.
 00:34:47 Bryan: Back in the day when people were talking about video-on-demand, the criticism was, "We are never going to solve the last-mile problem." It was always about the last mile.
 00:34:58 Kenneth: You have the last-mile problem, which is you got to get the high-quality bitstream to every single house.
 00:35:03 Bryan: Then you've got to get it close enough to every single house.
