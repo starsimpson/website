@@ -365,26 +365,24 @@ it again. Right?
 01:00:45 Bryan: You just keep using that verb "sell".
 01:00:47 Kenneth: Right. I sell its port to this guy and he didn't have his router directly connected to the switch. He had a switch on his side between our switch and his router for various technical reasons that when our port saw-- he accidentally had two Mac addresses on his side, which violated our-- just only your routers connected to us, violated that source, which shut down the port for thirty seconds to say, "you're doing something wrong".
 His router, though, didn't wasn't able to see that because his router wasn't connected to the exchange, his switch was. So, switch went, huh, weird that's where the port went down but whatever, no big deal and the router is still seeing the life support to the switch. So, it's still sending BGP keep alives that aren't going through for thirty seconds then they start going through and they start not, right?. So, the first two days, this guy is every like thirty or forty minutes, all of a sudden, our session drops and we lose all our traffic, then it all comes back again--
-01:01:46 Speaker 2: We want our money back.
+01:01:46 Steve: We want our money back.
 01:01:47 Kenneth: Right--
 01:01:48 Bryan: Exactly.
 01:01:49 Kenneth: We really want the money back. Of course. I was incredibly once I realized what happened was the thirty second interval that the ports are shutting down and then the three seconds that it comes back up, and the three minute interval that's time out, those two time outs were phasing in and out. So, about every thirty or forty minutes, his router would finally realize that the port's going down, shut it down, come back up, and then they'd start over and it would take about thirty minutes for to get in phase again to kill it. So, I was extremely apologetic. I gave him with a 200% refund. [laughs]
-01:02:22 Bryan: Next three months for free.
+01:02:22 Steve: Next three months for free.
 01:02:23 Kenneth: Yes, next three months for free. Okay, lesson learned there. Like you want your lower level, layer one, layer two time outs to be longer than your session time outs above it. It is like little nuance things everyone learns at the hard way but it didn't really cause that much problem because it's like when his router realized it was wrong, he routed around it and he used the rest of the Internet.
-01:02:48 Bryan: Right. He used the power of the Internet to avoid seeing the problem.
-01:02:51 Speaker 2: That's great.
-01:02:53 Bryan: Well, Kenneth, this has been awesome. If people want to learn more about what you've done with where's [crosstalk][unintelligible 01:03:01]
+01:02:48 Bryan: Right. He used the power of the Internet to avoid seeing the problem. That's great. Well, Kenneth, this has been awesome. If people want to learn more about what you've done with where's [crosstalk][unintelligible 01:03:01].
 01:03:00 Kenneth: Yes. The best place to see me long form is on my blog at blog.thelifeofkenneth.com. Then for a short short form--
 01:03:11 Bryan: You're doing nothing to dispel the Forrest Gump by the way [crosstalk]
 01:03:14 Kenneth: It's not wrong.
 01:03:16 Bryan: Right, exactly.
-01:03:17 Kenneth: That's why I write with long form stuff like these funny stories of like-- I handed someone my beer last week and did something else. So that's what I do in long form stuff for my short form shit posting stuff. I'm on Twitter, three letters @kwf
+01:03:17 Kenneth: That's why I write with long form stuff like these funny stories of like-- I handed someone my beer last week and did something else. So that's what I do in long form stuff for my short form shit posting stuff. I'm on Twitter, three letters @kwf.
 01:03:31 Bryan: Awesome. This has been great. It's been a lot of fun we think about on the metal as being the can compute substrate or the storage substrate but of course it's also the networking substrate. This has been great, wildly edutational.
 [laughter]
-01:03:45 Speaker 1: Edumacational.
+01:03:45 Jessie: Edumacational.
 01:03:47 Bryan: Edumacational. Thank you so much, Kenneth.
-[01:03:49]?Speaker 2:  Thank you.
+[01:03:49] Steve:  Thank you.
 01:03:50 Narrator: You've been listening to On The Metal, tales from the hardware software interface. For shout outs, to learn more about our guests or to sign up for our mailing list, visit us a @Onthemetal.fm. On the Metal is a production of Oxide Computer Company as recorded in the Oxide garage in Oakland, California. To learn more about oxide, visit us at oxide.computer.
-On The Metal is hosted by me Bryan Cantrill, along with [unintelligible 01:04:13], and we are frequently joined by our boss, Steve Tuck. Our original and awesome theme music is by JJ [unintelligible 01:04:19] at Polland Music Group. You can learn more about JJ and Poland at Polandmusicgroup.com. We are edited and produced by Chris Hill and his crew at Humble Pod, from Jess, from Steve, from me and from all of us at Oxide Computer Company, thanks for listening to On The Metal.
+On The Metal is hosted by me Bryan Cantrill, along with [unintelligible 01:04:13], and we are frequently joined by our boss, Steve Tuck. Our original and awesome theme music is by JJ Wiesler at Pollen Music Group. You can learn more about JJ and Pollen at Pollenmusicgroup.com. We are edited and produced by Chris Hill and his crew at Humble Pod, from Jess, from Steve, from me and from all of us at Oxide Computer Company, thanks for listening to On The Metal.
 [music]
 [01:05:09] [END OF AUDIO]
