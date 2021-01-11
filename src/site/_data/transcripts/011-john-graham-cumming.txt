@@ -1,0 +1,560 @@
+[music]
+00:00:13 Bryan Cantrill: Welcome to On The Metal, Tales from the Hardware/Software Interface. I'm Bryan Cantrill with me, as always is Jessie Frazelle. Hey, Jessie.
+00:00:21 Jessie Frazelle: Hey, Bryan.
+00:00:22 Bryan: Joining us is our boss, Steve Tuck. Hey, Steve.
+00:00:24 Steve Tuck: Present.
+00:00:25 Bryan: All right, Jessie, you want to introduce who we've got in the virtual garage today?
+00:00:29 Jessie: Yes. Remotely, which is a fun one, we have John Graham-Cumming, who wrote The Geek Atlas. I was just looking at that this morning and The Make book that I also have, and also works at Cloudflare as the CTO.
+[00:00:43] Bryan; All right, John, welcome.
+00:00:45 John Graham-Cumming: Thank you very much. It's very nice to be able to talk to you, from far away.
+00:00:49 Bryan: Yes, this is a conversation we've really been looking forward to having for a long time because when you dial up computer history, which we've been known to do on this podcast, you turn the dial all the way back. Do you want to talk about how you got into Babbage and his work with Lovelace and so on?
+00:01:09 John: Yes. I think I probably knew about it at university because it was mentioned just like, "Oh, by the way, there was this other thing, and maybe it was a computer, Charles Babbage. Then what really happened was, right at a time when I was at university in the UK, the Science Museum in London started building one of Babbage's machines, this thing called the difference engine, which is really a very big specialized calculator. It is not a computer and they started actually taking his plans and building it. Because of where I live when I was at college, and where my parents were, I used to have to travel through London.
+I would literally go through London and sneak out of the tube, go into the Science Museum, look at this thing being built, and then slowly, it would get bigger and bigger and bigger, because they built it in public.
+00:01:58 Bryan: Oh, wow.
+00:01:59 John: Which is really, really cool. I knew about it. I remember at one point, this is traumatic for you, taking my girlfriend who was also a mathematician to see this thing. Then the two of us like, "Okay, the method of differences, let's sit down." We sat down on, there's a little patch of grass outside the Science Museum. It's not a very grassy area, sitting down on this patch of grass on a sunny day in London. That's why I remember it.
+00:02:21 Bryan: Very distinctive.
+00:02:24 John: The two of us with a piece of paper working out, okay, how does this thing work? How does the method of differences work? That was probably really when I got excited about Babbage, and then subsequently realized that the difference engine as cool as it was, isn't actually programmable and that was a bit sad.
+00:02:40 Bryan: Did you already know at that point that you are interested in computing? Had you grown up in computing at that point?
+00:02:46 John: Yes. I was doing mathematics and computation as Oxford called it because Oxford was very theoretical. It was all about the theory of computation. None of this messing around with real computers. I hadn't messed around with computers for a long time
+because well, if you go backwards, you have to work backwards, I was obviously a child of the '80s 8-bit revolution in the UK. I had a thing called the BBC Micro which was this really cool computer with 48K RAM.
+00:03:14 Bryan: Whenever the BBC Micro is mentioned on the podcast, it's been mentioned a couple of times, I feel that all of our English listeners play God Save The Queen in the background.
+[laughter]
+00:03:24 Bryan: I feel that there is tears in the eyes.
+00:03:24 John: Well, there were two groups, Bryan. In the UK at that time, there was the Sinclair group, ZX81, the ZX Spectrum and then there were the BBC Micro people. We were two camps and the Sinclair machines were slightly cheaper.
+00:03:43 Bryan: I have got so many follow-up questions. Is this a class divide? Is it geographical? What divides these two clans?
+00:03:50 John: There was definitely a price difference. The Sinclair machines were much much cheaper and so I think they were much, much more widespread whereas the BBC machines were in school so you got at them at school. I ended up with the BBC machine because my parents in their wisdom, they said-- Well, they had two boys and they're like, "We'll let these two boys do the things they seem really interested in." My brother had had years and years of piano lessons and played the piano really well. I said, "I want to have a computer."
+They said, "Well, we probably spent that much money on piano lessons so we'll buy you this machine," which I still have. It's a treasure. It's in [crosstalk]
+00:04:28 Steve: Wow.
+00:04:28 Jessie: Wow. That's cool.
+00:04:29 Bryan: Oh, wow.
+00:04:31 John: It was a big, big deal and I was very funny actually. I switched it on a few years ago and immediately the power supply blew up so I-
+00:04:39 Jessie: Hold on.
+00:04:39 John: -had to replace the power supply. I looked at the back of it and it has the wattage of the machine which was about the wattage of a lightbulb. I remember thinking-
+00:04:51 Bryan: Really?
+00:04:52 John: -I knew that my parents didn't have loads of money to burn and they spent a lot of money on this machine and I had this incredible feeling like, "Oh my God, I can't run up their electricity bill with this machine." I used to switch it on and then go and switch a light off somewhere in the house to be like net zero.
+[laughter]
+00:05:11 John: I actually don't think my parents had that little money but it was more like I had this thing where I was like I got to--
+00:05:18 Bryan: If it draws 60 watts, this is not even observable on the power bill I assume.
+00:05:23 John: I guess but I felt as a-- I was a child and I decided I've got to do my bit.
+00:05:28 Bryan: What a [unintelligible 00:05:28] child.
+[crosstalk]
+00:05:29 Jessie: I know, it's really cute.
+00:05:30 Bryan: Meanwhile, my child--
+00:05:32 Steve: I'll take one of those.
+00:05:32 Bryan: I'll take one of those too. I can't get my kids to be like, "Could you just get off the mobile network and onto the wifi so you don't bankrupt the household watching Youtube."
+00:05:41 John: It was a different time.
+00:05:42 Bryan: It was a different time. Children were so mindful of the power bill.
+00:05:47 Jon: Actually to continue to answer your question if you go really right back in time, at some point when I was about I think seven, I was very bright and my parents were, "What the hell do we do with this bright kid?" They [00:06:00] found-- They [00:06:00] found-- because it's pre-internet. This is in the '70s. They found this association which was for desperate parents of intelligent children.
+[laughter]
+They're like, "What do we do with him?" They do this thing at Cambridge University in the summer where you could basically take your kids and dump them off and there your kids run wild. I went to that a couple of times and I actually hated it because some of the kids were so snotty, but there was one person I went up to and obviously, this person was in either the mathematics or computer science department at Cambridge, and I said, "Oh, explain to me how a computer works. I want to know." Imagine I'm like seven years old.
+What I remember of that is the person getting out a pad of paper and starting drew this strip on it and build boxes on it and basically describe the Turing machine. I have at home, my own little Turing things I've tried to do in strips of paper and come up with this computer thing. I think I was infected with computer stuff pretty early on. Mother would say even as a baby I was fascinated by things like how does the clock work? I would stare at clocks, "How does that work?" I don't know. Something happens probably in the womb, maybe.
+00:07:15 Bryan: Where is the eight-year-old that explained the Turing machine? Where did he end up?
+00:07:21 John: Oh, no, no, no, this was a professor at Cambridge.
+00:07:22 Bryan: Oh, professor. Oh, excuse me. I'm sorry.
+00:07:24 John: It was an adult. Whether he was like 21 or 40, I have no idea. As a child, if somebody sat and explained this to me, I was like, "Whoa, this is amazing." Then, of course, later on, I go and actually go to do computer science. I was like, "Wait a minute. That's a Turing machine." This guy Turing and now I hear about all this stuff for real and some of the theories. I don't know. I was into computers from an early age. I was nerdy.
+00:07:47 Bryan: You were obviously writing your own programs on the BBC Micro?
+00:07:51 John: Yes, obviously. I think I started out just playing with the machine, trying to understand it. Then I bought this book that was called The Advanced User's Guide, it had a lot of stuff about how the operating system or the BIOS for this thing worked and a lot of the gut there. I was very interested in that. I really learned assembly language and then started doing assembly language stuff on the machine. At the same time, I was programming another 8-bit machine which was made by Sharp MZ-80K, and then some others that Z80-based machines.
+00:08:23 Bryan: The MZ to give you the 80K. Interesting.
+00:08:28 John: Yes. It's a bit like a Commodore PET as an integrated CRT and a tape player, and unusually it had a keyboard where you could actually type every character that was in the character set. It's really weird because basically, it didn't have ASCII. It had its own thing with all sorts of crazy symbols and stuff and you could type everything. Anyway, I was reading some assembly language programming basically to make my programs faster or to access bits of the operating system and build various things. Me with another boy in high school, we wrote programs. We wrote a statistical analysis package. We wrote I think, the timetabling. Then basically around this time there, we had a 100-kilobit per second I think local area network at school. We disassembled the operating system and figured out how to make it work. I think the funny thing was we disassembled how the operating system worked so we could get access to the network.
+Then we implemented our own packet, send and receive routines, implemented our own stateful protocol on top of it so we could reliably send stuff, built a network management package, all of this in the assembly language.
+00:09:42 Bryan: Wait, and all of this, very early for local area networking, right?
+00:09:45 John: Yes, exactly, because there was this company in the UK called Research Machines that sold computers to schools, and they were first going on. The high school I was at the [unintelligible 00:09:56] school in the UK, the headteacher died very suddenly of a brain hemorrhage.
+00:10:02 Bryan: Oh my gosh.
+00:10:02 John: A lot of money was raised, and the money was spent on this new thing which was a computer room.
+00:10:08 Jessie: Cool.
+00:10:08 John: In the computer room, they had a network of these Z80-based machines. Myself and another boy, we hacked them, basically.
+00:10:17 Bryan: What was the substrate because this was going to be too early for ethernet, right?
+00:10:21 John: It was this thing called ZDNet, which was our only--
+00:10:23 Bryan: ZDNet?
+00:10:24 John: Yes. [chuckles] They made their own networks and stuff, really. The machines were running CPM. Then they had the central machine that was running NPM, which had eight-inch disks. Then they had this networking thing. I think it was called-- What was it called? It had a funny name, but it was 10BASE2, basically, coax.
+00:10:48 Bryan: It was 10BASE2, okay.
+00:10:51 John: It was coax chain. That's what they called it. They called it chain and 800 kilobits per second. The MAC address was an eight-bit address on a DIP switch in the machines and you had to go in to type it in.
+[laughter]
+00:11:03 Bryan: Interesting experiment.
+00:11:05 John: It was a holy but it worked. The best thing is that myself and Peter, who is the other boy, we really got into this stuff. We used to sit physically closest to the file server machine as you follow the network because it was coax, you could actually remove the connector at the end, terminate it with a BNC terminator, turning the network into a network with the file server and two machines, and then up the performance because you just cut off the rest of the network.
+00:11:37 Jessie: Messed up.
+00:11:37 Bryan: You just close the door on the rest of the network.
+[laughter]
+Wow, things get a lot faster. That's great.
+00:11:42 John: You're doing a file transfer and the other kids in the class were getting on your nerves, you just pop the network off, terminate it, do your file transfer, and put it back again. You can hear the other kids complaining, "Why isn't the computer working?" "Well, I don't know. Maybe it's this BNC terminator we put on the end of [crosstalk]."
+[laughter]
+00:11:57 Bryan: That's great. Again, that is very I feel, early for networking, especially in a school. The way you were using at this point--
+00:12:05 John: It was 1984.
+00:12:07 Bryan: that is very early to be networking in a school.
+00:12:10 John: It was fascinating because we got access to this thing. Then the really nice thing is that I wrote to the company and basically said, "By the way, we reverse-engineered the entire operating system, we're doing all this stuff. Will you give us documentation?" We like, "We'd like to actually have the real documentation." Somebody from the organization wrote back to us and said essentially-- I actually published the letter on my blog. They essentially said, "Don't tell anybody, but here's all the documentation for this thing."
+00:12:41 Bryan: Did you reveal that you were 14 or whatever you were, did they know?
+00:12:44 John: Oh, yes.
+00:12:46 Bryan: They knew that this was a bunch of kids that had to be--
+00:12:48 John: Yes, it was really, really, really encouraging actually because we were just hacking this stuff on our own. We didn't know what we were doing. We just were reverse-engineering everything. We did things like we wrote a paint program and we were sitting there going, "Oh, how do we do like fill an area with a color and writing flood fill and all this kind of stuff?"
+00:13:16 Bryan: This is for these machines?
+00:13:18 John: Yes, for the machines, for this Research Machine 480Z, it was called. I actually have the letter here, "Thanks for the letter. Don't tell anybody, but here's the documentation."
+00:13:27 Bryan: I'm just amazed that it had the graphics horsepower to do a paint program in 1984.
+00:13:32 John: It did it. It was a very simple, simple graphics program. I'm trying to think. I think in black and white mode, it was like 640 by 192. I think in like a color mode, it was like 320. I think it was 16K of video memory.
+00:13:53 Bryan: Still, you think of it, this is before the Mac.
+00:13:56 John: It's about time right with it.
+00:13:59 Bryan: : That must've felt-
+00:14:01 Jessie: Impressive.
+00:14:01 Bryan: That's very impressive to be-- It must've felt like you were really-- Did you feel like you were on the cutting edge of computing because certainly, from a personal computing perspective, you more or less were in 1984?
+00:14:13 John: No, I don't think we had any perspective. I think we just have these machines. I had the Sharp machine. I had the BBC Micro at home and I had these network machines at school. I just remember more than anything feeling like we could do whatever we wanted with these machines. we knew every memory location, what it did, like the memory-mapped IO. We completely disassembled the operating system. I think Peter wrote the disassembler as well. A lot of stuff we wrote because we're like, "Oh, it's getting boring just looking at the Z80 opcodes. Let's write a disassembler."
+We were bootstrapping from whatever we had. It was fascinating. I still have a lot of the code. We wrote this management package for this network entirely in assembler. Then you could send a message to machines that we wrote a chat program, all this kind of stuff.
+00:15:11 Bryan: I feel it was pro-grade work at the time. Effectively, there were a bunch of companies that were endeavoring to do that same thing at that same time.
+00:15:21 Speaker 1: I think you're right. I think it's about the time where stuff was really taking off and I was a teenager. I probably could have gone and got a job somewhere else.
+00:15:31 Bryan: You could have dropped out of school entirely. Was attempting at all to be like, "I know everything there is to know about computing. I'm going to set my--" because I'm actually impressed that you studied computing or computation at university.
+00:15:45 John: Here's a really interesting thing, which is that I was doing this, Peter was doing it. That was really the two of us in the whole school. We were really deeply into it. I think that outside of that little world, it was not obvious in 1984, 1985, that this computing thing was a good career, particularly not in the UK. It was kind of a hobby thing and you were messing around and wasting your time and you should go and get a proper job afterwards. I actually really, really seriously considered being a lawyer because I thought maybe this computer--what is this? I'm going to mess around with this. I don't know what my job is going to be."
+In particular, the sorts of jobs you're going to get are like technicians. It was really looked down on as where there was no distinction between software engineer, which the term didn't even seem to exist, at least from my perspective, and someone who installs a phone in your home.
+00:16:41 Bryan: That's a very important point. You do actually forget that. I grew up slightly later, but in the '80s and actually, my father had written software when he was at university didn't for a moment contemplate doing it for a career. He became a physician because it was viewed so pejoratively at some level. It was viewed as something that you were messing around with and having fun with, but not something that-- I definitely remember my mother vividly telling me, "You can't play on the computer forever."
+00:17:11 John: Absolutely. I think my parents were-- I was obsessed with the thing. One summer, I stayed inside the house basically the entire summer in front of a machine. This was in front of the Sharp machine writing a bunch of stuff. I wore through the bottom of the trousers I was wearing just from shifting in the seat.\\[laughter]
+It was a little bit obsessive.
+00:17:36 Bryan: At this point, are your parents thinking, "We really need to get John a piano"? Are they thinking that, "We have overshot the mark on--"?
+00:17:43 John: No, I don't think so. Actually, I think that they were worried about me not going outside and socializing. I don't think they were worried about the computer. I think it was just, "Why is he spending so much time inside? What is he doing?" On the other hand, I seem to be enjoying it and I wasn't causing any troubles.
+00:18:02 Bryan: You were very mindful of the power bill. I just [crosstalk]-
+00:18:06 Jessie: Turning off lights. Sitting in the dark.
+00:18:07 Bryan: Can't imagine such a considerate child. Then you head off to university and it's not too much longer thereafter that you're on the Sunny Leone in London trying to figure out the difference [unintelligible 00:18:21].
+00:18:21 John: Yes, exactly.
+00:18:22 John: Well, I took a year out actually, because I'd jumped a year at school. I felt like I was a bit young to go to college. I took a year out and I went and did a bunch of electronics stuff. I went to a local technical college and just did electronics. Felt interested in electronics, learned about how things really work. Then I got to Oxford and I'm going back and forth where my parents lived and Babbage comes along.
+Although, I will tell you one funny thing, which is that, years after all of this, during the last few years, I read a school report of Alan Turing. In it, the schoolmaster is saying, "You really ought to do better all these other subjects other than just science and mathematics, because if you don't, you will grow up to be a mere technician."
+00:19:10 Jessie: Oh, jeez.
+00:19:11 John: Which happened really, he didn't do much really, and sure he was just a technician.
+00:19:15 Bryan: Really just a technician. It is interesting. I've got mixed feelings about the fact that now there are-- most college campuses in the US, the introductory computer science course is the most popular course on campus, having surpassed the introductory bio classes. It's amazing.
+00:19:34 Jessie: Really?
+00:19:35 Bryan: Yes. Jessie has given me a crazy look. No, that is true.
+00:19:38 Jessie: Where did you read this? I didn't know that.
+00:19:39 Bryan: This is true if you talk to any university.
+00:19:41 Jessie: That's crazy.
+00:19:41 Bryan: Yes, I know.
+00:19:42 Jessie: That's crazy. It was not popular when even I went to school.
+00:19:45 Bryan: Well, it's an economic thing as much as it isn't anything else.
+00:19:48 John: Yes. That's right. There's money in it. Right.
+00:19:51 Bryan: There's money in it.
+00:19:51 Jessie: Oh, that's true. Like nursing was huge my year.
+00:19:54 Bryan: Right. Now, you can imagine if you're a parent of an 18-year-old who's concerned about the economic viability of that 18-year-old, you're probably telling him to take a computer science class.
+00:20:04 Jessie: That ruins it a little bit, to be honest.
+00:20:05 Bryan: Well, that's the question. It's like there was something pure when nobody was pursuing it for economic reasons.
+00:20:14 Steve: It's gone mainstream.
+00:20:14 Jessie: There was like 12 people in my class.
+00:20:16 Bryan: 12 people.
+00:20:17 Jessie: It was so small, and then I was the favorite.
+[laughter]
+00:20:23 Bryan: Sorry, did anyone know?
+00:20:23 Steve: [crosstalk] That was back in 2000, but now?
+00:20:25 Bryan: Just want to make sure.
+00:20:25 Jessie: Exactly.
+00:20:28 Bryan: In doing this I've heard so many stories of Jessie and her adventures in math. The Jessie you should know is the person who sets up all of the Trapper Keepers around her math exam to make sure that you cannot see anything that she's working on.
+00:20:42 Jessie: Well, I want to be the favorite and I want to get 100%. I don't want people to cheat off of me.
+00:20:47 Bryan: I feel like it's reasonable. I feel like I was in your math classes with you. It's certain your descriptions of math class are so vivid. It does feel like there is something when you are drawn to it despite societal pressure, that is something else. The people that end up being there are the ones who are really deeply, deeply drawn to it.
+00:21:08 John: Yes, I think the thing I really felt was as much as Peter and I were working on stuff together, there was an intense amount of competition. I know I was incredibly annoyed when he did something clever because I really wanted just to master the whole machine and prove how brilliant I was.
+00:21:23 Bryan: Dare we ask where, where's Peter now.
+00:21:26 Steve: You shouldn't ask.
+00:21:27 John: I have seen him. He does something things, designing something for the British government and can't tell you about it. I don't know what it is exactly, but it's some electronic things.
+00:21:38 Bryan: Is this an elaborate multi-decade plan to get even with you? Maybe he's like, "I'm going to show you the grand coming."
+00:21:46 John: The satellite is going to suddenly shoot me.
+[laughter]
+I don't know. It's been quite a few years. He went to Cambridge. I went to Oxford. It's like different directions.
+00:21:56 Bryan: Then you're looking at the difference engine. I think both the difference engine and the analytical engine are so fascinating because they are mechanical, not electronic. A couple of questions for you on that. For those folks who haven't seen it, we'll obviously link to it in the show notes. You gave a great TED talk on the reconstruction of this. I guess before it was really reconstructed as you were showing that the simulation. In particular, you had some programs that Babbage had written for it. I guess I didn't realize that he'd actually written programs for the thing that he had not built.
+00:22:30 John: Yes. I think if you look at all of the stuff that Babbage left behind about what's called the analytical engine, which is his computer which is the thing that he worked on with Lovelace, they were simultaneously designing the machine and thinking about what the programming language would be like what the instruction set would be basically. Babbage came to this idea that the difference engine was limited in what it could do because it was fixed in terms of essentially its program in a way. Also, they couldn't really do much with its output.
+He couldn't fundamentally take its output and feed it back in and do something. He realized that there was functions he couldn't compute. The things about Babbage is he was completely obsessed with mathematics. This is all about computing mathematical functions. He realized he could make this more flexible machine, program them with punch cards. Why punch cards? Because they were widely used for looms for weaving. That was the technology that was available. He's just kind of making the instructions there and thinking about what the machine will look like and how to optimize the machine at the same time.
+There are in the Science Museum stacks of cards, threaded together with the programs on fairly simple. This is the sequence of things you would do to calculate some function. The problem was as well I think Charles Babbage was like many nerds, a little bit difficult to deal with. You also realize this is the classic thing. He makes the difference or he designs the difference engine and then he just abandons it like, "I can make an even better one." Eventually, the British government said to him, "We've spent as much as a backup ship on this thing and you haven't actually built anything." He's like, "Yes, but the next version is going to be the coolest because it's going to have this such and such feature." Eventually, his funding got cut off. He was constantly optimizing the machine, adding instructions, making it faster. He realized things like, "Well, I could essentially have instruction pipelining and data pipelining. While the CPU bit is doing an instruction, I could be moving the next data from the store," as it's called.
+He's just a classic nerd and then in his notes, he's like, "Maybe I need 100 memory locations. Maybe I need 1,000 memory locations." Remember this thing is physical, so it's ending up the size of a locomotive.
+00:24:47 Bryan: Well, it's physical and it's also unbuilt. This is the thing that is so amazing to me is that he is doing all of these optimizations on a system that is not built at all. This is I think the thing that sticks out the most to me about Babbage is like, how are you-- Most of us need to actually like mess around with something in front of us to really wrap our brains around the system and yet he is able to-- truly, he would talk about keeping the system in your head. He truly kept the system in his head.
+00:25:17 John: He did, and Lovelace too, clearly from their interaction. She understood how it worked, was able to imagine the sequence of events. What's funny about him is he's thinking about both of it logically and also physically. Some point in his evolution, he realizes that he needs a hardware description language because it's complicated to describe the physical thing. What you want to do is describe what the physical thing does and so he invent so hardware description language.
+00:25:49 Bryan: Like mechanical Verilog, what is this?
+00:25:52 John: Yes. Basically, he's like-- For example, he uses his hardware description language to describe a clock, how a clock operates. He said, "If this component turns around 60 times, this component then moves one step. It's like abstract without it being how that's actually implemented. He did that. In the course, classic nerd, then along the way he's like, "Oh, I'm going to change my hardware description language." The problem with building the machine is it's a moving target. There's plans, there's pages and pages of hardware description language.
+There's also funnily enough, in some of the best-developed plans, there are whole sections that are left unfilled in. It's a blank bit. Looking at his documentation of what he wrote down because we have his lab notebooks, basically thousands and thousands of pages, he's basically saying, "Oh, that is obvious. It's obvious how we'll do that bit," which might be the card reader or something like that. The other thing he did that's really interesting is microcodes. Basically, the punch cards describing operation, like addition, then you've got to actually cause a physical thing to do addition by moving numbers around and carry operations and stuff like that.
+There he's like, "Okay, well--" Essentially he microcodes that and the way he does that is on the physical barrels, like in a barrel organ. They have a load of pins sticking out of them. You have one of those for each instruction, which can then make the machine operate.
+00:27:18 Bryan: That's the microcode effectively.
+00:27:19 John: That's the microcode effectively [unintelligible 00:27:22] machine. It's a very similar architecture to one you would recognize. It's got a central CPU. It's got a bunch of memory. It's got Ingress and a bus, which is essentially memory bus. It's quite recognizable. I think that's what's so tempting about trying to build it is anyone who's actually looked inside the computer will go, "Oh, yes, I can see what the CPU is." I can see all of these analogy," and all the optimizations he was making is unbelievable.
+00:27:48 Bryan: A stupid question, was it buildable at the time? Could you have machined it or was it relying--
+00:27:53 John: Yes.
+00:27:54 Bryan: It was actually buildable.
+00:27:55 John: That's really the cool thing actually which is that is the other crazy thing about Babbage, the manufacturing techniques, everything is hand-built. For example, at the time if you got nuts and bolts, you had to go back to the same nut and bolt manufacturer because there was no standardized threads. Babbage before actually embarking on building even the difference engine stuff, he went on a tour of England, going to visit people who did manufacturing to understanding the state of the art of manufacturing. He eventually teamed up with someone in London, who had an apprentice and that apprentice was the person who ultimately would standardize screw and nut and bolt threads.
+[00:28:39] Jessie That's crazy.
+00:28:39 Bryan: As a contribution to humanity, this is the standard.
+00:28:45 Jessie: He's clearly good at hiring.
+00:28:46 Bryan: [laughs] He is very good at hiring.
+00:28:50 John: Very wealthy. That helped as well. What's clear is he had to bootstrap the whole thing. He's like, "Oh, I don't have any manufacturing techniques. Okay, well, I'll figure that out." What's important is when the Science Museum built the difference engine, they did it using materials and machined in such a way that is with the tolerances that were available. They know that the machine does what it should do and would have been reliable. I think we have a good sense that the analytical engine would also be reliable and actually operate.
+Another really fascinating story about this is if you think about in electronic computers, and when you have a signal going between components, you quite often have to make sure the signal is amplified in such a way that it's either one or zero, clearly. We get some fanout cost, electrically. The equivalent in his machine is that he has the numbers that are stored in the memory are stored on a wheel with a cog on it with a gear on it, zero to nine. Obviously, they might not move perfectly into position when you the additional something.
+He has this little triangular thing that shoves in to the gear and actually pushes it into position into whatever the nearest number is. That's exactly an analogy of an amplifier, where you're going say, in logic gates where you're keeping the signal at the right level. It's fascinating to see these analogies between what happens in electronics, what happens in hardware, but we shouldn't be surprised because many meters later Church and Turing come along and tell us, "Oh, well, all this stuff is equivalent. It doesn't matter how you do it."
+00:30:33 Bryan: Interesting. Was this ever built before the Science Museum picked it up?
+00:30:38 John: The difference engine was not.
+00:30:39 Bryan: No, never built. No one picked it up.
+00:30:41 John: Babbage talked a lot about-- he built some little samples pieces components and then other people saw them and said, "Oh, we can build a difference engine too." There were other people who built smaller models, not quite the same scale as what Babbage was doing, but then Babbage's machine eventually got built by Science Museum and you can go see it. Then there was a copy in the History museum until it was taken back by its billionaire owner.
+00:31:08 Bryan: Who's the billionaire owner?
+00:31:09 Jessie: Yes, that's shitty. Who does that?
+00:31:11 Bryan: It's stark. They get thrown off the back of their yacht?
+00:31:15 Jessie: Nathan Myhrvold CTO of Microsoft. He paid two things. He asked the Science Museum to build one so he could have one. Have his own difference engine. He sweetened the deal by giving the Science Museum enough money to build the bit of the difference engine that they had never got around to building, which was the printer. The reason Babbage got into this whole difference engine thing is you have to go back your 1800s. Britain's massive Naval power. It needs really accurate information for navigation.
+You may have heard about the Longitude Prize, which is a clock. What you also need is use any books of tables of numbers, like log tables, sin, co-sin, all that stuff, so you can do calculations. The problem was these things were created at the time by people who were called computers. [unintelligible 00:32:09] calculated these things and they printed these books. Babbage famously said to a friend, I think at college, "I wish this damn thing could be all computed by steam because that would be accurate." That's what set him off in this whole path.
+The reason he was thinking that is he and a friend from college had a fun time going through books of say, log tables, the sin tables and looking for errors. It sounds like a great evening [unintelligible 00:32:35]. There were lots of errors and finding errors was a valuable thing. He was like, "If I could just make a machine that did the calculation accurately, then not only that, but remove any problem of transcription, it will actually print out the results automatically. We would actually print out on paper and also print out in such a way that it was possible then to reproduce that mechanically in a book.
+It would actually make you a led sheet so you could just take it straight, so you'd be absolutely certain your book of log tables was accurate. We did the whole thing. This was actually built and it does actually work as well, these prints and even does justification as well the printer, all mechanically.
+00:33:14 Jessie: That's cool.
+00:33:14 Bryan: Wow, justification.
+00:33:18 Jessie: It's such a detail.
+00:33:19 Bryan: It's such a detail for something that exists only in your head. It's remarkable to me.
+00:33:25 John: Yes, but he was trying to make this real thing that would be really valuable. He was thinking through all of the issues like, what if it's off by a little bit? How am I going to print it? How to remove a transcription error. What do I do if something goes wrong?
+00:33:42 Bryan: Amazing, all right. We got to take a quick break. We'll be back in just a moment with more John Graham-Cumming.
+[music]
+On The Metal is brought to you by the Oxide Computer Company. I thought we had a bit of time to deal with this, but it sounds like the listeners are pretty restless.
+00:33:59 Steve: Oh-oh, is this about the ads?
+00:34:01 Bryan: Yes.
+00:34:01 Steve: Oh no.
+00:34:02 Bryan: The inbox is full.
+[00:34:02] Steve Oh boy.
+00:34:03 Bryan: They also have begun recording their own ads and sending them to us requesting mercy from the repetitive ads that we've been subjecting them to.
+00:34:10 Steve: Wait a minute, they're in such pain over the ads that they're sending us ads for Oxide?
+00:34:14 Bryan: Yes. I got one out. Have a listen. This is from listener Paul Gwas. "I'm getting really, really, really tired of listening to the same oxide.computer ads every week talking about how the Oxide Computer Company is going to make your on-premise infrastructure faster, more effecient, more secure and just all around less painful, so much so in fact that I wrote and recorded this ad. Head on over to oxide.computer to learn more and join our mailing list.
+00:34:41 Steve: I think we should just do what Paul said. Let's just follow his instructions.
+00:34:44 Bryan: Let's get back to the show. We're back. We're talking about steam-powered computing, literal steam, and Babbage working on his printer. When they put these things together-- We'll get to Nathan Myhrvold in a second and then taking back the--
+00:35:03 Jessie: That's cruel.
+00:35:05 Bryan: That's cruel and we're going to call him out for it. Surely there were bugs somewhere in this. Surely there were things that didn't work correctly or did Babbage really-- did he get this whole thing nailed?
+00:35:20 John: I know he did get it nailed. What we know is that when they built the difference engine in Science Museum, there was a problem which they identified when they were looking at the plans. The problem was that something was inverted. The speculation is that Babbage may well have actually deliberately introduced the error so that somebody, if they were copying it would not be able to do get it to work [crosstalk]
+00:35:42 Bryan: That is a testament to like, your code is so bug-free that when I find a bug in it, I legitimately think that it was introduced deliberately.
+00:35:53 John: Exactly, having said that, when they got onto the analytical engine and there's these [crosstalk] between Lovelace and Babbage, this is where you get into-- the program he's actually buggy. That's really where, Lovelace and Babbage going back and forwards over this program to calculate a sequence of numbers. They're like, "Wait a minute, this doesn't work," and then they're debugging on paper, this thing for a machine that doesn't exist.
+00:36:18 Jessie: That's so cool.
+00:36:18 Bryan: That's amazing. Are they doing this via correspondence?
+00:36:22 John: Yes, actually. Obviously they met a few times in person, but a lot of it is done by letter.
+00:36:27 Jessie: That's so slow. That development cycle. I just think that is something else.
+[laughter]
+00:36:36 Bryan: people complain about the speed of deploying the production. Why don't you try debugging via exchanging letters?
+00:36:42 Jessie: Instead of waiting to compile, you're waiting for the postman.
+00:36:46 Bryan: Oh my gosh.
+00:36:46 John: For a machine that you don't have.
+00:36:50 Bryan: That has never been built.
+00:36:51 John: There's no [unintelligible 00:36:51] computer yet. What I realize, I get how Babbage got into it. He sees this problem of these tables and he thinks, "Yes, this could be mechanized," and he keeps going and going and going and he's just building and building on, building on it. What was Lovelace's deal? She was like a teenager. She walks in and sees a demonstration piece of Babbage's thing. Babbage explains it to her and she completely gets it. What was her deal? She'd never seen a computer. She's like, "Great, I'll program that then."
+Where did she come from? I think that's the thing that's fascinating. She obviously had a mathematical background. Actually, if you read Babbage's correspondence, she's really the only person who [unintelligible 00:37:32]
+00:37:34 Bryan: Interesting. I was going to ask how is this seen more broadly by even others that are mathematically inclined or mathematicians? How do they view all this work at the time?
+00:37:47 John: I think the big thing is they view it as he hasn't actually built the machine and he keeps asking for more money, and, "When are we going to get one of these things?" I think that's the big guy. People understood what he was trying to do particularly around the difference engine, because it had a real purpose that everybody understood. It's not well understood I think, widely what the analytical engine was about. That was far out because that wouldn't make this programable thing and run arbitrary programs on it.
+00:38:13 Bryan: It's the curse of the cross-discipline area and as well, because it's straddling mathematics and mechanical engineering in a way that is probably at some level foreign to both disciplines, I would imagine. Is that a fair inference?
+00:38:28 John: I think that's not a bad point actually, because he's going from a very theoretical world and then he's, "Well, I'll put this physical machine," and then people are wondering, "What is this guy on about?" You're talking about Babbage is also dabbling in all sorts of other areas like, "Oh yes, we could probably--" one of these strange things, "We could probably figure out what the ancient climate looked out by cutting down trees and looking at their brains of how far apart they're. These code-breaking things for the British government is like all sorts of stuff he's doing. His biography is fascinating and at the same time, he's arguing with the establishment Britain about various things. He's basically calling other scientists a bunch of idiots. Then he was offered a knighthood. He was going to be Sir Babbage, but the knighthood he was being offered was not the one he thought was the right one. He turned it down.
+00:39:28 Bryan: That's what he does.
+00:39:28 John: The bad thing he's building this machine and dissing everybody else. It's no ideal situation. The only thing that's really, really, really tragic of course is the Ada Lovelace died very young [crosstalk]
+00:39:41 Bryan: I was going to ask where she was.
+00:39:41 John: -cervical cancer and died in her 30s.
+00:39:44 Jessie: Oh, that's really sad.
+00:39:44 Bryan: Oh my God, why didn't I realize that.
+00:39:46 John: It's like nobody understands if the 16-year-old girl comes up and says, "Yes, I get this. I'll program it with you. They go on this long correspondence and then she dies. Then he lives for years afterwards having lost the only collaborator he gets. There's this one description because he doesn't describe this himself, but he went to the US at some point trying to raise money. Again, this is such a modern thing. He said, "No one in Britain understands me, but Americans will understand because they'll think, 'How can I make money out of this?'"
+00:40:19 Bryan: Charles Babbage heads to Sand Hill road.
+00:40:22 John: Actually, he basically goes to us to try. In fact, what he does is he decides to make a machine that will play tic-tac-toe, which we'll show people in the US that it would give them a load of money and you've got to build these machines. While he's in the US, somebody awesome-- [crosstalk].
+00:40:37 Steve: I just need to use it. [unintelligible 00:40:39]
+00:40:38 Bryan: I've got to go. I go to the US because they'll pay me money for tic-tac-toe.
+00:40:42 Jessie: I envisioned him on Sand Hill Road when you said that.
+00:40:45 Steve: So do I.
+[00:40:46] Jessie Then I just couldn't get out of it.
+00:40:47 Steve: Then you envision all these VCs, these 19th century, and they say, "Well, we'll be cheering for you from the sidelines," saying, because--
+00:40:57 John: Anyway, so he goes there, but somebody recounts. I can't remember, but this is written up. Actually, somebody wrote a letter about it, that they had said something to Babbage about Ada Lovelace. She had died not long before and that this is just a description of this, him just falling apart in despair that she was gone and that this was his intellectual equal in this process. He was probably in his 70s at this point. She was in her 30s, but they got it.
+They understood how to make this work, what the future was. In a funny way, she understood it more than he did because he very much was obsessed with this idea of these mathematical equations geared towards mathematics. She's there and she says in one of the papers like, "Hey, but we could represent pretty much anything by numbers like music or symbols or letters. We could compute all sorts of other stuff."
+00:41:50 Bryan: Yes. You call that Lovelace leap, I believe.
+00:41:55 ?John: It was cool with that because everyone talks about having the first program, which is fine.
+Honestly, between her and Babbage, they were both coding. This thing was like, "Hey, Babbage, you build this machine? By the way, we could do text processing and music and it could compose music and all this kind of stuff." It's like, "That is a huge leap"
+00:42:14 Bryan: That is a huge leap.
+00:42:15 Jess: That's cool.
+00:42:16 Bryan: It really is a huge leap. To do that again on a machine that's not built.
+00:42:20 John: Exactly.
+00:42:23 Bryan: It is a huge leap. When do they get fully appreciated for their-- at what point does society realize that they were truly ahead of their time by a hundred years almost.
+00:42:38 John: I think the most is interesting is they were definitely ahead of their time, but Babbage and Lovelace, are like the uncle and aunt of the rest of computing because it's a complete dead end. They do this stuff, she dies, he dies. His son carries on a little bit of the web, but he really goes nowhere. Then it stops end of the 19th century, and then middle of the 20th century, or in the '30s, maybe, commuting reappears again, but now electronically, or electromechanically, at least. It's like two separate tracks where there's not really a direct Babbage to modern computing connection.
+00:43:16 Bryan: Which I was going to ask. The census machines of the late 19th century, did they even view themselves as inheriting any of that legacy, or did they--
+00:43:25 John: I don't think so [crosstalk] -
+00:43:25 Bryan: Interesting. Totally separate track.
+00:43:27 John: - other mechanical things were there, and clearly people were aware. The folks who worked on the Harvard Mark I, they say, "Yes, there was this other attempt in the 19th century, and Turing in one of his papers he talks [unintelligible 00:43:43] Ada Lovelace was aware of-- because Ada Lovelace was wondering whether this machine could think.
+00:43:49 Jess: Wow. That is so ahead of the time.
+00:43:51 Bryan: "All right, Ada Lovelace, like how much of the future are we going to envision here?" It is like, "Wow, interesting."
+00:43:56 John: I know. I do wonder if she hadn't died would she have kicked Babbage and be like, "Can you just build the damn thing? I've got stuff I've got to write. I've got programs to write."
+00:44:06 Bryan: That interesting thought. If Lovelace had lived, would she have--
+00:44:10 John: The other thing I think is really interesting is right about this time, right at the same time as Babbage's here with his mechanical computer, Michael Faraday is in London with electromagnetism, and he's making transformers and relays and solenoids and all this kind of stuff. It's quite clear that Babbage was obsessed with doing it all mechanically and this electromechanical thing was way too new and wasn't reliable. He knew how to handle gears and all this kind of stuff. I've actually wondered sometimes suppose Babbage succeeded, would he have actually set everything back because we would have perfected mechanical computing?
+We would've gotten really good with mechanical computers. Would Faraday be on the side going, "You know, you could do this about a thousand times faster with electricity, right?" and we would say, "No, no, that technology is too new. It's unreliable."
+00:45:03 Jess: Oh, yes, that could have totally set a different time in motion.
+00:45:09 Bryan: Oh, we can just imagine a lot. You can also imagine the machine gets built and people realize this could be done much faster with relays and so on. Then computing gets jump-started 60 years earlier.
+00:45:25 John: Yes. Maybe, who knows? Anyway, Babbage and Lovelace were really smart, and definitely, Babbage was-- If Lovelace can be called the first programmer, then I really think Babbage is the first computer nerd.
+00:45:37 Jess: Oh, sure.
+00:45:38 Bryan: Here's another question in terms of how the history of computing actually gets written, even the census machines and so on and the accounting machines of the early 20th century, don't actually get us over the hump. It ultimately takes the existential threat of a world war to actually get humanity over the hump with respect to computing. Maybe [unintelligible 00:46:01].
+00:46:02 John: Maybe, or maybe it just happened that in the '30s, Turing is doing some theoretical work, Church is there and some stuff is happening, and then, yes, the war is there. I don't know, but maybe the war gave us some bunch of money but feels like the time was right.
+00:46:20 Bryan: Interesting. Okay.
+00:46:21 John: Shannon is there thinking about we could do all this logic we want to do, we could do electronics. I don't know. I'm not sure the war is actually central. The war, certainly-- a lot of money got spent on computing.
+00:46:32 Bryan: Well, certainly focused the mind on the problems at hand, but interesting. All of these things were building up, do you think that there was a bit of inevitability to it then at that point?
+00:46:43 John: I do you think it was inevitable. Yes, because if you look at the way people were thinking about things and then there was this process in mathematics where there was this idea that maybe we can mechanize a lot of stuff that was happening in mathematics before there were machines. I think even from the theoretical side of things, mathematicians were thinking about these things, which is how Turing gets to it, actually. He's trying to solve a problem in mathematics. He's not trying to invent a computer, but along the way, he's like, "Oh, so in order to mechanize this thing, I need some sort of machines."
+Then he describes this universal [unintelligible 00:47:17] a-machine [unintelligible 00:47:18] machine.
+00:47:20 Bryan: Was this a budding theory of computation then in math? What's the outgrowth of math that Turing is coming from?
+00:47:25 John: There's this thing called the Entscheidungsproblem, which was one of Hilbert's problems. This mathematician called David Hilbert came along and he said, "Well, there's a program of work [unintelligible 00:47:38] in the '20s." Basically, the idea was you, [unintelligible 00:47:41] with mathematics, and he thought, "Well, maybe we could create this really solid logical foundation for all of the mathematics. We could have a set of axioms and we could do everything, just lay it all out. All of the mathematics, somehow be encompassed in this one project."
+He's like, "Well, therefore we need to figure out what the formal language would be for that, and then we need to see if we can find a system which has certain properties." So, for example, is it complete? Could everything that's true actually be proved? Is it consistent? There no contradictions in this mathematics. Actually, the last one is that, is it decidable? Which is, is there some algorithm to decide whether a mathematical statement is true or false? So this was just a purely mathematical project.
+00:48:28 Bryan: But you can see the seed of the halting problem, for sure.
+00:48:30 John: Yes, exactly. Gödel comes along, and comes up with his incompleteness theorem and says, "It doesn't matter what you try, it's going to be incomplete." Which kind of went poof, blew up the whole [crosstalk] --
+00:48:42 Bryan: [laughs] "Oh, sorry, did I just burn your [unintelligible 00:48:45] to the ground?"
+00:48:45 Jess: I just have to say, I thought that Hilbert's problem was one of the unsolved math things. Yes, that's why
+00:48:50 John: Yes. [unintelligible 00:48:51] but you just ruined everything. Then Turing is like "Well, I think I'm going to go and think about this whole decidability thing and I'll go and look at this, What can we actually decide, and--" Church was doing that with the lambda calculus and Turing with Turing machines and the equivalent of Gödel's incompleteness theorem is the halting problem. It's like, "Yes, actually there are some things you won't be able to decide, whether these programs are halting. At this point, David Hilbert is just like, "Oh, my whole program is gone."
+[laughter]
+00:49:24 John: "Yes, thanks, guys." What comes out of that, because this decidability is kind of mechanical, is computers. I think a lot was right in the '20s and '30s, and then, of course, Second World War happened, we needed practical machines.
+00:49:38 Bryan: Is this crew aware of Babbage and Lovelace? Are they well enough known that they would have been aware that they had done this work?
+00:49:47 John: References it a little bit, but they're not building on it. They're off on the side doing mathematics, and they're not really thinking about this machine. It's only later they sort of, "Oh, yes, that's kind of similar to what we're doing," but it's much later. It's not a linear progression through these things.
+00:50:05 Bryan: Wow. Maybe it's the way you're describing it, feels so cinematic.
+00:50:11 Jess: I know, it feels totally nice.
+00:50:12 Bryan: There's got to be a movie, right?
+00:50:13 Jess: Really should.
+00:50:15 Bryan: We've got to figure out who stars as Babbage and who stars as Lovelace. I don't know, it feels like there's a great movie to be made here about their story. It must've been amazing too to have all that correspondence between the two of them
+00:50:28 John: Yes, there's loads of correspondence in Lovelace's letters, and then the whole Babbage's letters and Babbage's writing and her writing, and then a bunch of people-- they spoke too and described what they were doing. It's very interesting to see it because it gives us a lot of background references. One of my favorite things about Lovelace is that-- Lovelace's father was Lord Byron who was a poet and quite famous, and also a drug addict and many other things. Lovelace's mother didn't want her daughter to have this poetical spirit; because that was really bad for a girl to have the poetry of her father. She made her learn mathematics as an antidote. That's how she was taught. Then one of her tutors was De Morgan of De Morgan's laws.
+00:51:17 Bryan: Oh my gosh.
+00:51:18 Jess: Oh, that is dope. Whoa.
+00:51:21 Bryan: De Morgan is here; he's got a cameo.
+00:51:24 John: Yes, exactly. De Morgan's like, "Who are we going to get to teach Ada mathematics? Well, De Morgan he'll do."
+[laughter]
+00:51:33 Bryan: He's available.
+00:51:34 John: He's available. She had this very strong mathematical background. The only thing about Ada Lovelace is it does come across a little bit in her letters, she does have quite a high opinion of herself.
+00:51:47 Bryan: Hey, wait a minute. In her defense, it sounds like--
+00:51:50 Steve: If one is going to have a high opinion of themselves, sounds like she qualifies.
+00:51:54 Bryan: Yes, exactly. She's like," I'm kind of acing it over here. I've got another idea. Do I need to remind you that music can be represented as information?" Like, "Okay, yes." "Sorry, what have you done again?"
+00:52:04 Steve: I was tripping up De Morgan when I was 12.
+[laughter]
+00:52:06 Bryan: Exactly.
+00:52:07 John: Actually, De Morgan did say about her, she really isn't an original thinker in mathematics and could actually be a first-rate eminence, I think is what he said.
+00:52:16 Bryan: Amazing.
+00:52:17 John: She was very young as well, but incredible story for the two of them. They obviously managed to get the poetry out of the-- get the mathematics [unintelligible 00:52:24].
+00:52:25 Jess: Yes, it's crazy.
+00:52:26 Bryan: Yes, it is just amazing to think about. To think about all casts of characters that are [unintelligible 00:52:33]. In terms of building the analytical engine, what's the progress on that? Because I think that the-- To give you some of the contexts for the question too, one of the things that's been so fun about doing this podcast is talking to people about how they got into computing.
+We learned about this thing called Dr. Nim and this mechanical manifestation of Dr. Nim that Ron Minnich described as being really inspirational to him, and based on that, there's this thing called Turing Tumble that's out there today, which is really neat. There's something that's really great and approachable about these systems for mechanical computation because it's so visceral. In a way that a smartphone is just not approachable, and in the same way, in terms of introducing kids and people to computing. What's the progress on the analytical engine? Has that yet been built?
+00:53:24 John: No. Goodness, me, no. I created a little charity in the UK to try and get this thing together. I found basically the two other giant Babbage nerds in the world. Doron Swade, who actually was the person at the Science Museum who ran the project, build the Difference Engine, and a guy in the US, [unintelligible 00:53:40] who has been building bits of the analytical engine out of [unintelligible 00:53:44]. The two of them have been pouring over every page of Babbage's notes about the analytical engine, and we now have massive cross-reference where we can look up anything about this.
+There's a reason that's important is that Babbage kept changing his mind about stuff. For example, he's like, "Oh yes, we'll use base 10 for this machine. No, let's use binary. No, let's use base 12. No, let's use base 16.
+00:54:11 Bryan: I'm just going to ask for the base because the 10 is effectively arbitrary and you're presumably looking for something that has the best mechanical properties.
+00:54:20 John: Right, that's why he-- Yes.
+00:54:23 Bryan: It sounds like there was some vacillation on that.
+00:54:25 John: Yes, there was. His decision was base 10 because it's easy for the UI. A human can expect the state of the machine and know what's going on. It makes it easy. It makes the mechanics of the machine more complicated prohibition. One of the reasons why he wanted to have binary was it make an adder really simple. He realized if he had binary, then his memory locations, his bites, which are literally stacks ears would be so tall, mechanically you'd have difficulty in moving them.
+00:54:55 Bryan: How much memory does he have in the analytical engine?
+00:54:57 John: [chuckles] It depends which version you're talking about.
+00:55:00 Bryan: All right. Which base?
+00:55:01 John: Somewhere between 10 and 1,000 memory locations. Each one being ends on the spec exactly but typically a 30 digit base-10 number.
+00:55:12 Jess: Wow. That's cool.
+00:55:13 Bryan: That is cool but also that is small.
+00:55:16 John: Guess what? It goes slow-
+00:55:17 Bryan: That is really small.
+00:55:19 John: - I might need double precision. I'll invent a system where I can link two memory locations together, so if I need 60 digits, I'll be fine.
+00:55:28 Jess: That's crazy.
+00:55:29 Bryan: The mechanical quadword.
+00:55:31 John: Yes.
+00:55:32 Bryan: Wow.
+00:55:33 Jess: That's crazy.
+00:55:34 Bryan: There's efforts, you've got to figure out which version of the analytical engine [crosstalk] --
+00:55:38 John: Exactly. The next step right now is now that we have all this stuff together is actually to take some of the hardware description language, the very log of the 1800s, and try figure out, "Okay, which bits some missing? Do we have enough to actually create something?"
+00:55:54 Bryan: Has it been built in simulation?
+00:55:57 John: No, not yet. Because there's literally 10 different written plans and there's thousands of pages of, "Oh, I'll try this out. Oh, I'll try this." Like a little sketch of some cogs, and maybe it'll work like this. "Here's the microcode. By the way, he has a program I produce on paper." It's a massive archeological thing. Whereas the Difference Engine before Babbage's death, he left behind a complete set of plans so that it was a simple task, the mere task of interpreting those plans for the Difference Engine. This is much more archeology on what he was doing.
+00:56:31 Jess: I was going to ask because I stalk these weird auctions online and I saw there's some letters and stuff from Babbage and Lovelace in a random auction. It's like, how do you collect all these things when it seems like they're almost also scattered across like the world?
+00:56:46 John: The good thing is his actual papers that he had, he arranged through his son; they would be donated to the Science Museum in London. The Science Museum has kept them since the 1800s and preserved them and then scanned them, so there's a lot. The definitive stuff is there. The letters are more interesting just from the historical context of what were they thinking and who were they interacting with.
+00:57:11 Steve: Just Tim Robinson maintains the Difference Engine No. 2 in the Computer History Museum in Mountain View.
+00:57:17 Jess: What?
+00:57:17 John: That's right, yes.
+00:57:19 Steve: Responsible for operation and presentation of it, so we're heading there in a couple of weeks, John.
+00:57:22 Jess: Nice.
+00:57:25 John: Yes, he's run it, really knows how it works, so between Tim and Doron, they've been going back and forth on, "What are we going to build; and what does it look like?" The cross-referencing was massive. It meant transcribing thousands and thousands of pages. You're talking about handwritten in Babbage's lab notebook copperplate writing, which even just staring at one of them you can't interpret what he's saying.
+00:57:49 Bryan: Right. Imagine there's a lot to be done, but I feel like this is an important thing for humanity to do, don't you think?
+00:57:55 John: Well, I know the computer nerds think that, but I'm not sure humanity thinks that.
+00:57:59 Jess: [laughs]
+00:58:01 John: I know that I think it's really, really cool, and I'd like to see the machine. What I hope is, we can build a machine eventually that were Babbage to appear in the room, he would first of all look at it and recognize his machine, and then in his typical commandinglyway, he say, "Why the hell did you build this version? The next version is going to be--" [crosstalk]
+00:58:19 Jess: [laughs]
+00:58:19 Bryan: Is going to be much better. Right. You would wonder what he would feel because then all of these things got so improved upon in the machine. He is like, "Why are you building this at all? You've already built this machine." [chuckles]
+00:58:30 John: Yes, I know, he probably would just berate us for being idiots [crosstalk] --
+00:58:34 Jess: [laughs]
+00:58:34 Bryan: Right. "You have these computers in your pocket. Why are you building this mechanical thing?" It just feels like it would be valuable to go-- It's so important historically, you would think-- I think one of these billionaires can actually back up the truck. They spend money on so much dumb stuff.
+00:58:51 Jess: Sand Hill Road should fund it.
+00:58:53 Bryan: Right. Do you mean all these super yachts and all sorts of garbage?
+00:58:55 Jess: [laughs]
+00:58:57 Bryan: Not sure that's fundable. I'm not sure that's fundable, speaking as ones who have started a computer company. I don't know that it would make our pitch any easier.
+00:59:06 Steve: No, if that helps people play Tic Tac Toe on a social network, that's fundable.
+00:59:11 Bryan: Yes, exactly.
+00:59:13 John: Who doesn't need a locomotive-sized mechanical [crosstalk] --
+[laughter]
+00:59:17 Bryan: That's a good question. Do we know even what the physical size of a completed analytical engine would be on the order of? Sounds like locomotive size.
+00:59:27 John: Yes. Like a small steam locomotive.
+00:59:29 Jess: That's cool. That's dope.
+00:59:32 Steve: That's feasible.
+00:59:33 John: I think it'll be fantastic. It'll be very, very slow, we know that. We have some idea of how fast it would run. It takes-- Roughly based on the data we have, to fetch two numbers from memory and put it into the CPU for addition takes three seconds.
+00:59:53 Bryan: Whoa.
+00:59:55 John: That's why he invented pipelining, because then it's like, "Hey, while it's adding I can get the next two numbers and put them on the input bars."
+01:00:03 Bryan: Wow, that is slow. You do wonder, would that have been prohibitively slow and would it have been able to do things that were otherwise-- Almost surely.
+01:00:14 Steve: Not his next version.
+01:00:15 Bryan: That's right, exactly.
+01:00:16 John: Exactly. "Why build that one? I've got one doing one second.
+01:00:21 Steve: Amazing.
+01:00:21 John: The other thing that's quite interesting in his stuff is he essentially has the whole RISC versus CISC in his head, because he's like, "Well, I can make a simpler machine if I have simple instruction. If I make complex instructions, then the machine will be faster because I can do something like square root operation or something." He's trying to decide. He's trying to play off, what do I build versus the forms of machine.
+01:00:48 Bryan: Does he have any inkling of the stored-program computer? Does he think about putting these instructions in the memory itself?
+01:00:54 John: No.
+01:00:54 Bryan: Interesting.
+01:00:55 John: That's a great question. He does not think about that at all. They're all on the punch cards and there's definitely no sense that you could put the program in [unintelligible 01:01:04]. Obviously, he has a sense of looping and things because he's going to need it. They have as a program. The other thing that's really wild is the operator of this computer. The operator's job is to do what the analytical engine tells that operator to do.
+01:01:20 Bryan: Fun Job.
+01:01:22 John: Yes. Job, right? He envisaged there being a wooden cabinet full of programs, essentially subroutines, and at some point, the machine rings a bell, which is handled by one of the punch cards and says, "You need to load up the cosine subroutine right now if I need to do it because I haven't necessarily got it all," because he thinks there's a limit on the number of punch cards you can have on a reel as there's going to be some physical limits. The operator has to come over and either feed in new instructions or new data to the machine. No, he does not think about it as a store program at all.
+01:01:59 Bryan: That is interesting. Because I've always called this John von Neumann's gift, and it sounds like I can still call it John von Neumann's gift. It sounds like it's not John von Neumann's gift and stolen from Ada Lovelace and Charles Babbage.
+01:02:10 John: Yes, I think so. To a certain extent, the Turing a-machine, that's a machine that reads a program from the tape. The same thing kind of thing. Babbage-- but his memory was so slow, and I think he liked the idea of punch cards. That's where the program was.
+01:02:24 Bryan: [chuckles] Just like the physical idea of punch cards.
+01:02:27 John: Yes. Go see them in the Science Museum. There's a stack of them standing there with a program on them. I find it's so incredibly upsetting. Every time I look at the stack of cards, there's a program trying to be run right there. It's waiting.
+01:02:39 Bryan: Yes. it is.
+01:02:39 John: [crosstalk] 150 years and no one's running it. You can run [unintelligible 01:02:44].
+01:02:43 Jess: That's so messed up
+01:02:45 Bryan: It feels like you at least want to be able to do it in simulation. Not actually machining the thing but actually being able to simulate a completed thing.
+01:02:52 John: Absolutely. We'll get there. That's the next thing. Once you say, "Okay, this is the machine, I can now [unintelligible 01:02:58] 
+We've got [unintelligible 01:02:59] we can we can simulate stuff."
+01:03:01 Jess: That's cool.
+01:03:01 John: It's interesting actually when they built the Difference Engine because they were doing it in mid-80s, they couldn't do a simulation because simulation software wasn't enough of them [unintelligible 01:03:10] at the time. Now actually, yes, we can simulate the whole machine physically, do physics simulation.
+01:03:17 Jess: Oh, that's cool.
+01:03:17 Bryan: Yes. I think that would be really valuable. Obviously, make it easier to machine and debug and so on.
+01:03:23 John: Yes, absolutely. Absolutely and we will. The thing is, it's very easy to design a mechanical computer because we can just go backwards. We can just be like, "Oh, yes, well, we know all about computing. Let's design a thing online. We want to actually build the thing he wanted to build, not some fantasy version of what he wanted to build [unintelligible 01:03:42] slow."
+01:03:44 Bryan: Right, because what he wanted to build is so ill-defined.
+01:03:48 John: Yes.
+01:03:49 Bryan: Yes, that's right. We're going to take another quick break and we'll be back with more John Graham-Cumming On The Metal.
+[music]
+01:03:59 Paul Gwaz: On The Metal is brought to you by the Oxide Computer Company.
+01:04:01 Bryan: Take it from Paul Gwaz, just go to oxide.computer. Let's please get back to the show. All right. We're back. Steve, I think you had a question for John.
+01:04:11 Steve: Well, yes. I want to ask about another fascinating person in computer history, Douglas Engelbart, that you mentioned in a 2013 OSCON talk when you were talking about how a lot of the innovation of today are-- maybe recycled is too strong, but had been imagined and had been built before. You talked specifically about him and what was called "The Mother of All Demos."
+01:04:32 Bryan: The Mother of All Demos.
+01:04:32 Steve: I want to ask a little bit more [crosstalk] --
+01:04:36 John: I think it's fascinating about computing. I can't ever quite reconcile this in my head is that we both-- forget about what the past was and think everything is new. We benefit from that and lose from it because we reinvent stuff, and it almost seems like somehow it's necessary to reinvent stuff that if we were stuck in the past, we never would invent new stuff. This is weird thing was like you look at stuff that gets invented today, the cloud computing and VMs and stuff, and you're like, "Wait a minute, was not a lot of this done in mainframes?" It's almost like it got forgotten or hidden away or looked down on.
+I find it really weird. The Mother of All Demos is fascinating because you're talking about forever ago, and here's a guy doing desktop video conferencing, and he's got hypertext and he's just interacting with a computer over a phone line. It's a little more complicated than that, but it's just fascinating to see. Then inventing the mouse because, "Hey, we need to have a mouse because we need some pointing device." That for me is really, really interesting, but it's hard to reconcile with we in some ways seem to forget the history of computing and reinventing.
+01:05:49 Bryan: Is it reinvention, because to me, I think the present rhymes with the past, because you look at say cloud computing and virtualization and so on, there are certainly very, very important elements done very early in computing but modern virtualization actually did have to solve a bunch of problems that had not been previously solved. My view has always been that you want to really look to the past to make sure you understand what has been done before so you're not resolving the same problem. I think sometimes we overly lionize the past and we think that every problem has been solved. I don't know.
+01:06:25 John: I think that's true. Certainly, the case that every problem hasn't been solved. Though I think it's interesting as the amount of theoretical work that was done in universities if you go back and look at Lamport clocks and all this kind of stuff, whereas distributed computing stuff being done before we really had enough distributed computing to worry about. I find that fascinating [unintelligible 01:06:46]. Then Google comes along and builds massive things. It's like, "Oh, yes, we can actually go back and look at all this research that was done."
+I think people do need to look at the history, but also be free to say, "Yes, we can do this, because now we have fast enough processors, or enough processors or good enough networks."
+01:07:07 Bryan: Also making it more robust because I remember being very trolled by an Alan Kay interview where he was lionizing how Unix was perfect in the '70s, how is it that we had a Unix kernel, a complete Unix system with 10,000 lines of code. I'm really thinking like, "I've been in that code." It's very important work; I don't want to denigrate it, but there were also all sorts of conditions that it simply did not handle. It would toss under very-- If you ran out of processes, the machine would panic. Let's take it easy here in terms of not everything that's been done since then-- I don't know. I'm always of like mixed opinion on it.
+01:07:51 John: I agree with you. We've made all this stuff work to the point at which we've managed to give the general public supercomputers in their pockets, and those machines seem to work somehow, and they don't have to worry about, "I know it's running out" or any nonsense like that. We've made stuff pretty reliable. I agree with you. I think it's difficult. If you see the perfection of the idea in Unix but the implementation isn't quite there, it's easy as a program to like, "Well, that's just an implementation detail."
+01:08:19 Bryan: Right. Exactly.
+01:08:20 John: We'll get there. We'll get there. We booked but the real step was the structure of the system or the decision that everything's a file or whatever was the decision. I think that's easy. Making stuff actually work in the real world it's really hard, really hard.
+01:08:36 Bryan: Actually what I really like as a technology that is very aware of the past but still very forward-looking is RISC-V. I don't know how much you've gone into the innards of RISC-V. I just love the way they have so deliberately learned from everything.
+01:08:51 John: Yes, I agree. That's a fascinating project. It's one of those things that I probably wish I had more time to spend messing around with, but, yes, agreed.
+01:09:00 Bryan: I just love they got these tables of like all these mistakes that various architectures have made. Because it's like all of these historic RISC architectures have got these weird warts. They've kind of gone through and systematically eliminated them, at least in the instructions of architecture.
+01:09:16 Jess: I don't people give enough credit to past history when they build things.
+01:09:21 Bryan: Right. I think RISC-V is a model in that regard where it's like, "Hey, we paid attention to the past, but we're not going to be confined by it."
+01:09:27 John: Never do that. That's a good way to look at it, definitely.
+01:09:31 Steve: Not to fixate too much on "The Mother of All Demos", but I was curious, was it actually a demo?
+01:09:36 John: Yes.
+01:09:36 Steve: [crosstalk] demo too.
+01:09:37 Bryan: It's recorded on video.
+01:09:39 Steve: Okay. He just recorded it on video?
+01:09:41 John: No, it was done live in San Francisco, I think.
+01:09:47 Bryan: If it was recorded on video, we have a video of the demo?
+01:09:51 John: Yes, we do. We do. I think it's like an hour and a half, something like that, 90 minutes. Everything's there. The mouse is there, video conferencing, real-time editing, collaborative real-time editing to somebody else's remote.
+01:10:03 Steve: What was the reaction at the time to all this groundbreaking technology?
+01:10:08 John: My understanding is everyone was completely blown away because it was networked and it was all this technology was actually happening and it's 1968.
+01:10:19 Bryan: This is before Park? The Mother of All Demos inspires a lot in Park and Park, in turn, inspires a bunch of the industry.
+01:10:29 John: Yes, this is SRI. I can't remember it was done. It was somewhere in San Francisco, the presentation.
+01:10:34 Bryan: Yes, it was in San Francisco, I believe.
+01:10:36 Steve: Did this just shock everyone? Were there teasers that this was coming? Did people know what he was working on?
+01:10:41 Bryan: Who was it that said, what's the quote "The future is here, it's just well hidden"? What's the--
+01:10:47 John: Oh, no. It's not evenly distributed [crosstalk] --
+01:10:50 Bryan: That's it. That's what it is. Who is that? That's [crosstalk]?
+01:10:55 John: William Gibson.
+01:10:55 Bryan: Right. Thank you. I feel the same way about the folks that were kind of in the know knew about that, but it was just like when we were talking-- Tom Lyon was here, who would describe going up to Park where his brother worked. There was a time in Silicon Valley when--
+01:11:12 Steve: One of his brothers.
+01:11:13 Bryan: One of his brothers. One of his five million prolific brothers. You would walk into Park and it was like walking into the future. A lot of people described that.
+01:11:23 Jess: That's cool.
+01:11:24 Bryan: Still, it was in the present. I don't know what the analog is for today though. What is the--
+01:11:29 Jess: Quantum. Those people would claim that they were the future. I'm just saying. I'm not defending it, but you know they [crosstalk] --
+01:11:36 Bryan: Hey, maybe it is.
+01:11:38 John: Probably, yes. Although my understanding is at the time some people thought that Engelbart was a bit crazy until he did the demo.
+01:11:45 Bryan: Oh, interesting.
+01:11:46 John: Had all these ideas that all this interactive stuff was going to happen and--
+01:11:50 Bryan: Just too wacky.
+01:11:51 John: Which is too whacky and out there, and it was like drop the mic basically. It's like, "By the way," bam.
+01:11:57 Bryan: Right. Because any one of those things would be groundbreaking to a certain extent, and he's like, "Oh, no wait, there's more. Wait there's more."
+01:12:03 John: Yes, exactly. He's like, "By the way, we're doing hypertext. Now we're going to switch windows. Now we're going to do a video conference [unintelligible 01:12:09] and then we'll do real-time editing."
+01:12:12 Steve: I have to believe there's people that were like, "Oh, this demo is rigged. Does this actually work?"
+01:12:18 John: Yes. It did actually work, although it was hell getting it working. I remember reading a thing about the-- it must have been going to probably bell when asking to get the phone line, the data connectivity between the two locations working. They may had to use microwaves actually.
+01:12:33 Bryan: Wow.
+01:12:33 Jess: Wow, that's cool.
+01:12:34 John: It was totally crazy because it was Menlo Park to San Fransisco if I remember well.
+01:12:42 Jess: That's dope.
+01:12:42 Bryan: That is amazing. Is there a book on The Mother of All Demos, just on that?
+01:12:47 John: I don't know. There should be.
+01:12:48 Bryan: There really should be. That's amazing that there isn't. It's certainly referred to a lot by the Park folks.
+01:12:55 John: You could have watched the video, is on YouTube. If you've got an hour and a half to watch a black and white video of somebody making a shopping list and editing online. Pretty [unintelligible 01:13:05].
+01:13:05 Jess: That's cool.
+01:13:06 Bryan: It is amazing. In 1968, it's just stunning. What is that demo equivalent today? I don't know if it's quantum or not.
+01:13:20 John: Maybe-- what's this crazy thing Musk is doing, drilling holes in people's heads?
+01:13:24 Jess: Oh, yes.
+01:13:25 Bryan: Wait, what?
+01:13:25 Jess: Fair enough.
+01:13:26 Bryan: Hold on, what?
+01:13:26 Jess: Yes. Hello, he has a new company.
+01:13:28 Bryan: The holes in heads?
+01:13:29 Steve: Yes. The cerebral implants.
+01:13:30 John: [crosstalk] into your head and connects you to something.
+01:13:34 Jess: It's like you're racking up your brain to the cloud.
+01:13:36 Steve: They're doing POCs right now.
+01:13:37 Bryan: Oh my God. You first. I don't even know. Words fail.
+01:13:44 Steve: I'm done, done, done.
+01:13:44 Bryan: I mean, come on. This is why I think maybe when you get these things that feel like a big leap, sometime it is hard to differentiate those from the things that are leaps that don't actually amount to anything. The whole nanotechnology, there was a period when nanotechnology was absolutely going to be the future and [unintelligible 01:14:08] gray goo. John, you remember this whole era?
+01:14:15 John: Yes, I do. I remember being absolutely fascinated by nanotechnology and then Neal Stephenson wrote The Diamond Age and made it seem like it was all coming. Yes. You know what I really wanted? I wanted nanobot shaving cream.
+[laughter]
+01:14:34 John: I wanted to be able to rub tiny robots on my face and have them shave me.
+01:14:38 Jess: That's cool.
+01:14:38 Bryan: That's terrifying and captivating.
+[laughter]
+01:14:40 Bryan: Oh my God. The nanobot shaving cream, [unintelligible 01:14:44], that's unique to you. I don't think I've ever heard that.
+01:14:47 John: That's my thing. That's my thing.
+01:14:48 Bryan: That's your thing. There is this whole nanobot idea. This is Feynman's idea of the bot that built the smaller bot, and there was an era in the, I would say what, late '80s, '90s when this was a very captivating idea, and then you realized that like, "You know what, this is not coming," because I need [crosstalk] --
+01:15:09 Jess: [unintelligible 01:15:09]
+01:15:09 John: [unintelligible 01:15:10] this book. Drexler wrote this book called Engines of Creation. It was about his mission to make machines. That was going to be this thing called the gray goo, which was like [crosstalk] -
+01:15:17 Bryan: The gray goo.
+01:15:18 John: - over the whole world by making copies of themselves.
+01:15:22 Bryan: Then he would give this very captivating-- talk about like your demo, he would talk to especially folks in the military-industrial complex about a cow is a machine that turns grass into steak. Based on that why is it not possible for me to turn you into gray goo?
+01:15:42 Jess: What?
+01:15:43 Bryan: The idea is--
+01:15:44 Jess: That doesn't line up, though.
+01:15:46 Bryan: Well, for the admirals and the generals, they got very excited.
+01:15:52 Steve: A lot of head nodding.
+01:15:53 Bryan: Yes, a lot of head nodding.
+01:15:54 John: It was the '80s.
+[laughter]
+01:15:59 Bryan: Indeed. No, there's some truth to it. I feel that nanotechnology-- I don't know, John, when did you have the conclusion that like, "I need to stop waiting for this. It's not coming"? I think actually--
+01:16:08 John: I don't know. There's a lot of things I'm waiting for. I've stopped waiting for domestic robots that are of any use. I've stopped waiting for flying cars and jetpacks. The gray goo was along the way, I guess. The big problem with it-- I remember being fascinated by it. The thing about the Drexler thing was it'll all be done by having just a-- you have a whole load of chemicals, and we'll just assemble stuff out of chemicals. It's like, "Well, chemistry is actually really hard. You can't just link atoms together to make plastic. It just doesn't work like that." I think it was around then I was like, "This isn't going to happen."
+01:16:44 Bryan: For me, too, it was when I read Engines of Creation and realizing-- Well, first of all, this is probably an overgeneralization, but I do feel that people that want to go by first initial name name, there's something there. No. It's K. Eric Drexler, J. Edgar Hoover. There's E. Howard Hunt. There are a bunch of ones that are-- Anyway, whatever.
+01:17:07 John: [unintelligible 01:17:08] the theory about serial killers. They were having names like that. They were of two names.
+01:17:13 Bryan: Right. Exactly.
+01:17:14 Jess: That's fair.
+01:17:16 Bryan: Yes. There's something weird about that, [crosstalk] but honestly, and this is an interesting contrast to Babbage, Babbage had not actually built anything, and yet what he was onto was very legit. K. Eric Drexler never built anything. There was nothing. There was no demonstrable system at all demonstrating any of these ideas. It was all ideas. When I realized that, I'm like, "Wait a minute, there's nothing?" We can't point to anything that is getting towards what we would call a nanomachine. There's not a micro machine. There's not a milli-machine, let alone a nanomachine.
+01:17:55 John: Then what do we get out of it? We got out of it 3D printers. Fun but yes.
+01:18:02 Bryan: Yes, exactly. I've got to ask you this because I definitely wonder if we've got the first snowflakes of the next AI winter are surely blowing.
+01:18:14 John: I'm not a deep enough expert in this but it sure feels like it.
+01:18:19 Bryan: Yes, and please, the lack of expertise has never prevented me from shooting my mouth off, so please do not let it prevent you from-- I do wonder if AGI is going to be this generation's equivalent of moon bases and flying cars, where you're going to have-- When the Gen Z'ers, when they grow up they're going to be like, "Yes, the artificial general intelligence that I was promised when I was a teenager never arrived." I definitely wonder about that. What's--
+01:18:48 John: Hey, I was promised that too. The first day I went to-- I thought that there was going to be expert systems. That was a thing. Were going to get so good that they'd replace doctors.
+01:18:59 Bryan: Yes, that's right.
+01:18:59 John: All this fun stuff was going to happen, and then it's like, "Yes, no, that didn't happen."
+01:19:05 Bryan: It is actually funny that you should mention about medicine because that's exactly what my father was actually doing, working with another physician in San Diego who was using expert systems on medicine, and it was interesting what they-- There's a lot of value but they were very limited in terms of what they would ultimately be able to do.
+01:19:23 John: Right. IBM has pushed very hard the idea that Watson's [unintelligible 01:19:28] and fight cancer and stuff It's the same stuff again.
+01:19:34 Bryan: I want to [unintelligible 01:19:34] an idea for you. I believe that we in computing to prevent the further seasonal cycles in AI, AI is hereby ordered to change its name to Automated Pattern Recognition. It may continue to exist as a discipline but it must change its name because its very name is leading to this seasonality.
+01:19:58 John: I see. They're overselling it, basically.
+01:20:01 Bryan: They have to oversell it because it's in the name.
+01:20:03 Jess: Yes. I think that flying cars are not exactly dead, by the way, because--
+01:20:09 Bryan: What? [laughs] [crosstalk] There we go.
+01:20:10 Jess: You've said this twice now. [laughs] With electric VTOL and their flying taxis, if that works out, although it probably won't.
+01:20:18 Bryan: Okay.
+01:20:18 John: Maybe.
+01:20:20 Jess: I'm just saying.
+01:20:22 John: Honestly, growing up I was definitely promised flying cars [unintelligible 01:20:25] everything, all this, domestic robots, and literally the future has turned out to be trying to keep all my batteries charged. Great.
+[laughter]
+01:20:37 John: It's like, "Great. That's what I got. I got to recharge stuff up."
+01:20:42 Steve: There's inventors to all that. Just saying it's just implementation details.
+01:20:46 John: It is, just implementation details.
+01:20:47 Steve: We're almost there.
+01:20:48 John: We're almost there, yes.
+01:20:49 Bryan: I think just that-- Because I grew up in the past that John did, where we were really promised flying cars--
+01:20:57 Jess: Like The Jetsons.
+01:20:59 Bryan: The Jetsons.
+01:20:59 John: Yes
+01:21:00 Bryan: If you really want to capture the zeitgeist, it is that final scene in back to the future.
+01:21:05 Steve: Back to the future I was going to say.
+01:21:07 Bryan: That is what captures that '80s zeitgeist of what the future was going to be.
+01:21:10 Steve: We don't need roads.
+01:21:11 Jess: That very different than the electric VTOLs.
+01:21:14 Bryan: Yes.
+01:21:15 Jess: Because it's basically a helicopter.
+01:21:17 John: Also moon bases. Frankly, I was promised moon bases.
+01:21:19 Bryan: Yes. I was promised moon bases and-
+01:21:21 Steve: It's now Mars bases.
+01:21:22 Bryan: - I built them with Legos.
+01:21:24 Steve: Mars bases are coming. "Mars bases are [unintelligible 01:21:27]." Three flights a day. Just seat tight.
+01:21:30 Bryan: Is that for people who've had holes drilled through their skulls?
+01:21:35 John: Actually Tesla is going to drill into your skull and fly you to Mars. [crosstalk] --
+01:21:39 Steve: It's going to be a lot of latency back to earth.
+01:21:41 Bryan: All right. Well, with that dystopian view of the future, John, thank you so much.
+01:21:46 Steve: This has been so much fun.
+01:21:47 Bryan: Oh, this has been so much fun-
+01:21:48 Jess: Yes, it's been amazing.
+01:21:49 Bryan: - and an interesting tour through the history of computing.
+01:21:54 John: Thanks very much. Lovely chatting with you. Good luck with the company.
+01:21:57 Bryan: [crosstalk] Thank you.
+01:21:58 Steve: Thanks.
+01:22:00 Bryan: You've been listening to On The Metal Tales from the Hardware/Software Interface. For show notes, to learn more about our guests, or to sign up for our mailing list, visit us at onthemetal.fm. On The Metal is a production of Oxide Computer Company and is recorded in the Oxide garage in Oakland, California. To learn more about oxide, visit us at oxide.computer. On The Metal is hosted by me, Bryan Cantrill, along with Jessie Frazelle, and we are frequently joined by our boss, Steve Tuck.
+Our original and awesome theme music is by JJ Wiesler at Pollen Music Group. You can learn more about JJ and Pollen at pollenmusicgroup.com. We are edited and produced by Chris Hill and his crew at HumblePod. From Jess, from Steve, from me, and from all of us at Oxide Computer Company, thanks for listening to On The Metal.
+[music]
+[01:23:24] [END OF AUDIO]

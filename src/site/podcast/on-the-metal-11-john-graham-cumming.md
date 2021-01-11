@@ -14,7 +14,7 @@ description: |
   computing history.
 podcast_file: https://media.transistor.fm/4e9a14a9/b31b442b.mp3
 iframe_link: https://share.transistor.fm/e/4e9a14a9 
-transcript_file: 
+transcript_file: 011-john-graham-cumming.txt 
 ---
 
 We are back! Because of the pandemic we have not recorded any more episodes of
