@@ -12,8 +12,8 @@ description: |
   about how John got started in computers, hacking his school's network to make
   his own network faster, and all sorts of details of
   computing history.
-podcast_file: 
-iframe_link: 
+podcast_file: https://media.transistor.fm/4e9a14a9/b31b442b.mp3
+iframe_link: https://share.transistor.fm/e/4e9a14a9 
 transcript_file: 
 ---
 
