@@ -23,7 +23,7 @@ Unfortunately, in the '90s, Apple computers were like behind glass. You could ba
 00:03:00 Bryan: I would have jacked the C++ Compiler as my next step.
 00:03:02 Star: I didn't now where to begin.
 00:03:03 Bryan: That's great. Oh my God.
-00:03:04 Star: That's what the internet told me to do. Because the internet at the time was like, "If you can't run a shell interpreter then are you even a programmer?" I was like, "I don't know. I'm nine."
+00:03:04 Star: That's what the internet told me to do. Because the internet at the time was like, "If you can't write a shell interpreter then are you even a programmer?" I was like, "I don't know. I'm nine."
 [laughter]
 Star: It seemed like that everything pointed me in that direction. I needed to get the thing to do the thing. I got the thing. Unfortunately, due to my ineptitude at pirating or whatever, it just didn't come with the standard I/O library. It came with a "Hello, World!" code example that wouldn't compile.
 00:03:32 Bryan: Right, because you didn't have I/O streams. It was missing I/O streams.
@@ -31,7 +31,7 @@ Star: It seemed like that everything pointed me in that direction. I needed to g
 00:04:12 Bryan: Oh, RadioShack.
 00:04:12 Star: -more accessible.
 00:04:13 Bryan: RIP RadioShack.
-00:04:14 Star: RIP RadioShack. We paid an enormous sum of money, to me, at the time, a pre-teen with no cash on my own. I was like, "I can't believe I'm spending this much money to buy a bunch of circuit components from RadioShack." I spent the entire summer just building every circuit example in the book.
+00:04:14 Star: RIP RadioShack. We paid an enormous sum of money, to me, at the time, a pre-teen with no cash on my own. I was like, "I can't believe my mom is spending this much money to buy a bunch of circuit components from RadioShack." I spent the entire summer just building every circuit example in the book.
 00:04:29 Bryan: Oh, my gosh. Wow, that's great.
 00:04:31 Star: It was my failure to get the code example to compile sent me directly into circuit design.
 00:04:36 Bryan: I don't know what to think about C++ coming out of this. My going in thought is that you were abused as a child-
@@ -39,14 +39,14 @@ Star: It seemed like that everything pointed me in that direction. I needed to g
 Bryan: -by C++. Now, that C++ actually drove you to hardware. That's great. Then getting excited about hardware, obviously, over that summer. Were you making burglar alarms?
 00:04:56 Star: Yes, that kind of thing. The funny thing is, it gave me the strong impression initially that code was completely inscrutable, but hardware you could always get to the bottom of the problem. [chuckles]
 00:05:07 Steve: Hardware's easy.
-00:05:09 Bryan: It would have allowed you to probably completely understand what was in front of you. Clearly, you were, even at young age, someone who really wanted to understand things.
+00:05:09 Bryan: It would have allowed you to probably completely understand what was in front of you. Clearly, you were, even at young age, someone who really wanted to understand things..
 00:05:17 Star: I really wanted to understand things, yes.
-00:05:18 Bryan: [unintelligible 00:05:18].
+00:05:18 Bryan: - at their root.
 00:05:19 Star: Yes. The book, I think, it was 21 Transistor-- I remember the final thing was mind-blowingly cool to me which was a circuit that had memory. You could unplug it and plug it back in. The four LED state would be the same.
 00:05:34 Bryan: Nice. It actually had persistence.
 00:05:36 Star: It had persistence. I think I put two copper wires on the board, so it had a touch input to increment the LED count.
 00:05:44 Bryan: That is great. Obviously, you felt a very deep resonance. Did you have an idea of what you wanted to go do at that point?
-00:05:52 Star: I had a vague but strongly directional idea. I didn't know exactly what because, again, I was still roughly as informed as the kid who was, "The programming, I don't know where to begin. I'm just reading everything I can." Yes, I was really lucky to be able to get into things like robotics or building potato canons with my best friend in the summer, various stuff of varying levels of sophistication or lack thereof. [chuckles] It all really drove me to I knew I wanted to make stuff for me that was going to be useful. I think that was the shape of my hope.
+00:05:52 Star: I had a vague but strongly directional idea. I didn't know exactly what because, again, I was still roughly as informed as the kid who was, "The programming, I don't know where to begin. I'm just reading everything I can." Yes, I was really lucky to be able to get into things like robotics or building potato canons with my best friend in the summer, various stuff of varying levels of sophistication or lack thereof. [chuckles] It all really drove me to I knew I wanted to make stuff for people, that was going to be useful. I think that was the shape of my hope.
 00:06:28 Bryan: It's that engineer's calling to actually build something that people would actually use. What next? Did you head off to school?
 00:06:36 Star: I did. I went to MIT. I found out there were many levels of nerd.
 [laughter]
